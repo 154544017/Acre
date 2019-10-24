@@ -10,6 +10,7 @@ public class Plant {
 
     /**
      * Register the observer object
+     *
      * @param observer the observer object to register
      */
     public void attach(Observer observer) {
