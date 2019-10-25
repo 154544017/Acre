@@ -6,8 +6,6 @@ import Creation.AbstractFactory.MaleFactory;
 import Creation.Builder.*;
 import Creation.FactoryMethod.*;
 
-import Model.NullLife.NullLife;
-import Model.FarmLife;
 import Model.Plant.Plant;
 import org.junit.Test;
 
@@ -49,13 +47,5 @@ public class CreationTest {
         director.construct();
     }
 
-    @Test
-    public void NullLifeTest(){
-        NullLife phantom =new NullLife();
-        phantom.show();
-        phantom.setId();
-        System.out.println(phantom.isNull());
-        // 待feed
-    }
 
 }

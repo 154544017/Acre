@@ -28,11 +28,6 @@ public abstract class FarmLife implements Cloneable{
         this.state = new Youth();
         this.growthTime = growthTime;
     }
-    public FarmLife(){
-        this.name=null;
-        this.state=null;
-        this.growthTime=-1;
-    }
 
     public int getId() {
         return id;
