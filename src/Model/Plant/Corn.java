@@ -16,8 +16,8 @@ public class Corn extends Plant {
     }
 
     @Override
-    public void show() {
-
+    public void show()  {
+        System.out.println("我是"+ getName() + getId());
     }
 
     @Override
