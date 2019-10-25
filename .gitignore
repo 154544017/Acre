@@ -34,5 +34,6 @@ Thumbs.db
 
 # IDEA output files #
 
-/out/
+out/
+.idea/
 
