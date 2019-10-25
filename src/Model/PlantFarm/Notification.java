@@ -1,4 +1,4 @@
-package AnimalFarm;
+package Model.PlantFarm;
 
 public class Notification implements Observer {
 

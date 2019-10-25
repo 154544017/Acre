@@ -1,15 +1,15 @@
-package AnimalFarm;
+package Model.PlantFarm;
 
-class ForageGrass extends Plant {
+public class ForageGrass extends Plant {
 
     /** the state of the grass */
     private String state = "initial state";
 
-    String getState() {
+    public String getState() {
         return state;
     }
 
-    void changeState(String newState) {
+    public void changeState(String newState) {
         state = newState;
         System.out.println(this.getClass().getName() + " switches its state to " + newState);
         notifyObservers(this, newState);

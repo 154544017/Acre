@@ -1,8 +1,13 @@
-package AnimalFarm;
+package Test;
 
-public class Client {
+import Model.PlantFarm.ForageGrass;
+import Model.PlantFarm.Notification;
+import org.junit.Test;
 
-    public static void main(String[] args) {
+public class ObserverTest {
+
+    @Test
+    public void notifyTest() {
         ForageGrass forageGrass = new ForageGrass();
         System.out.println("Forage grass's original state: " + forageGrass.getState());
 
@@ -11,5 +16,4 @@ public class Client {
 
         forageGrass.changeState("mature state");
     }
-
 }

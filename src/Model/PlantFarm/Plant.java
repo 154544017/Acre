@@ -1,4 +1,4 @@
-package AnimalFarm;
+package Model.PlantFarm;
 
 import java.util.ArrayList;
 import java.util.List;

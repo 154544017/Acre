@@ -1,4 +1,4 @@
-package Farm;
+package Model.Farm;
 
 public class Watering implements Strategy {
 
