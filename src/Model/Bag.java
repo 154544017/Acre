@@ -6,12 +6,21 @@ public class Bag  {
     private String name;
     private List<Bag> subBag;
 
+    private List content;
+
     public void addSubBag(Bag p){
         subBag.add(p);
     }
+    public void addContent(Bag p){
+        content.add(p);
+    }
 
-    public void remove(Bag p) {
+    public void removeSubBag(Bag p) {
         subBag.remove(p);
+    }
+
+    public void removeContnet(Object o) {
+        content.remove(o);
     }
 
     public String getName() {
@@ -22,18 +31,27 @@ public class Bag  {
         this.name = name;
     }
 
-    public void setSubBag(List<Bag> subBag) {
-        this.subBag = subBag;
-    }
 
     public List<Bag> getSubBag() {
         return subBag;
+    }
+
+    public List<Bag> getContent() {
+        return content;
     }
 
     public Bag getOneSubBag(String n){
         for(Bag p:subBag){
             if(p.name.equals(n)){
                 return p;
+            }
+        }
+        return null;
+    }
+    public Object getOneContent(String n){
+        for(Object c:content){
+            if(c.toString().equals(n)){
+                return c;
             }
         }
         return null;
