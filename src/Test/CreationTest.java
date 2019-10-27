@@ -12,7 +12,7 @@ import org.junit.Test;
 public class CreationTest {
 
     @Test
-    public void plantFactoryTest(){
+    protected void plantFactoryTest(){
         PlantFactory factory1 = new PotatoFactory();
         Plant corn1 = factory1.createPlant();
         Plant corn2 = factory1.createPlant();

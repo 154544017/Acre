@@ -1,4 +1,4 @@
-Bag composite;
+package Model;
 
 import java.util.List;
 
@@ -14,7 +14,19 @@ public class Bag  {
         subBag.remove(p);
     }
 
-    public List<Bag> getSubBags(){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSubBag(List<Bag> subBag) {
+        this.subBag = subBag;
+    }
+
+    public List<Bag> getSubBag() {
         return subBag;
     }
 
