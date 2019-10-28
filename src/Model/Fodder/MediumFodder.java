@@ -1,4 +1,4 @@
-package Model.Fertilizer;
+package Model.Fodder;
 
 /**
  * 目的地B1
