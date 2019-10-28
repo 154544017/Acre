@@ -10,8 +10,11 @@ import Model.State.Youth;
 
 import java.util.ArrayList;
 import java.util.List;
+import Model.Rancher;
+
 
 public class AnimalFarmScene extends Scene {
+    private Rancher rancher;
     public AnimalFarmScene(){
         System.out.println("牧场加载成功");
     }
@@ -21,10 +24,10 @@ public class AnimalFarmScene extends Scene {
         return animalList;
     }
 
-    public boolean feedAnimal(int id,String className){
-        for(Animal a:animalList){
-            if(a.getId()==id){
-                if(a.isNull()==false){
+    public boolean feedAnimal(int id,String className) {
+        for (Animal a : animalList) {
+            if (a.getId() == id) {
+                if (a.isNull() == false) {
                     a.show();
                     Class clz = null;
 //                    try {
@@ -39,25 +42,22 @@ public class AnimalFarmScene extends Scene {
 //                    } catch (IllegalAccessException e) {
 //                        e.printStackTrace();
 //                    }
-                    if(className.equals("MediumFodder")){
-                        a.fodder=new MediumFodder();
-                    }else{
-                        a.fodder=new ExcellentFodder();
+                    if (className.equals("MediumFodder")) {
+                        a.fodder = new MediumFodder();
+                    } else {
+                        a.fodder = new ExcellentFodder();
                     }
                     a.fodder.feed();
-                    if(a.getState().getNum()+a.fodder.getNum()==1){
+                    if (a.getState().getNum() + a.fodder.getNum() == 1) {
                         a.setState(new Youth());
-                    }
-                    else if(a.getState().getNum()+a.fodder.getNum()==2){
+                    } else if (a.getState().getNum() + a.fodder.getNum() == 2) {
                         a.setState(new Growth());
-                    }
-                    else if(a.getState().getNum()+a.fodder.getNum()>=3){
+                    } else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
                         a.setState(new Maturation());
                     }
                     a.getState().react();
                     return true;
-                }
-                else{
+                } else {
                     a.show();
                     return false;
                 }
@@ -65,6 +65,10 @@ public class AnimalFarmScene extends Scene {
             return false;
         }
         return false;
+    }
 
+    @Override
+    public void setRancher(Rancher rancher) {
+        this.rancher = rancher;
     }
 }

@@ -1,8 +1,8 @@
 package Model.Scene;
 
-import Model.Player;
+import Model.Rancher;
 
 public abstract class Scene {
-    protected Player player;
-
+    protected Rancher rancher;
+    public abstract void setRancher(Rancher rancher);
 }

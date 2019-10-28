@@ -6,7 +6,10 @@ import Creation.AbstractFactory.MaleFactory;
 import Creation.Builder.SceneBuilder;
 import Creation.FactoryMethod.*;
 
+import Model.NullLife.NullLife;
 import Model.Plant.Plant;
+import Model.Plant.Potato;
+import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
 import org.junit.Test;
@@ -39,8 +42,13 @@ public class CreationTest {
 
     @Test
     public void builderTest(){
-        AnimalFarmScene scene1 = (AnimalFarmScene) new SceneBuilder("AnimalFarm").buildBackground().buildDecoration().build();
+        //AnimalFarmScene scene1 = (AnimalFarmScene) new SceneBuilder("AnimalFarm").buildBackground().buildDecoration().build();
         PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().build();
+        Rancher rancher = new Rancher("omf");
+        scene2.setRancher(rancher);
+        scene2.plant(new PotatoFactory().createPlant());
+        scene2.harvest();
+
     }
 
 //    @Test
