@@ -28,6 +28,8 @@ public class Farmland {
     }
 
     public void reapCrop(){
+        if(isEmpty)
+            return;
         if(crop.getState().getClass().equals(Maturation.class)){
             System.out.println(landId.toString() + "号农地收获作物:"+crop.getName());
             this.crop = null;

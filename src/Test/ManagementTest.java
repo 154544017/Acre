@@ -7,8 +7,7 @@ import Management.FarmInfoManagement.FarmInfoTaker;
 import Management.FarmlandManagement.FarmlandIterator;
 import Management.FarmlandManagement.FarmlandSet;
 import Model.FarmInfo;
-import Model.Farmland;
-import Model.Npc;
+import Model.NPC;
 import Model.Plant.Plant;
 import Model.Rancher;
 import org.junit.Test;
@@ -21,6 +20,7 @@ public class ManagementTest {
         FarmlandIterator ite = farmlandSet.getIterator();
         PlantFactory factory1 = new PotatoFactory();
         Plant corn1 = factory1.createPlant();
+        ite.current().plantCrop(corn1);
         ite.current().plantCrop(corn1);
        while(true){
            ite.current().show();
@@ -59,9 +59,9 @@ public class ManagementTest {
     @Test
     public void clubMediumTest(){
         FarmerClub farmerClub = new FarmerClub();
-        Npc p1 = new Npc("小娜");
-        Npc p2 = new Npc("小美");
-        Npc p3 = new Npc("小刚");
+        NPC p1 = new NPC("小娜");
+        NPC p2 = new NPC("小美");
+        NPC p3 = new NPC("小刚");
         farmerClub.join(p1);
         farmerClub.join(p2);
         farmerClub.join(p3);
@@ -74,4 +74,6 @@ public class ManagementTest {
         p2.sendMessageToSomeone(me,"多加肥料！！");
         p3.sendMessageToSomeone(me,"商店里买激素！！");
     }
+
+
 }

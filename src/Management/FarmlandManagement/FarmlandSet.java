@@ -1,6 +1,7 @@
 package Management.FarmlandManagement;
 
 import Model.Farmland;
+import Model.Plant.Plant;
 
 import java.util.Vector;
 
@@ -23,9 +24,21 @@ public class FarmlandSet  implements Container {
 
     public void reapAllFarmland(){
         FarmlandIterator ite = getIterator();
+        ite.current().reapCrop();
         while(ite.hasNext()){
             ite.next().reapCrop();
         }
+    }
+
+    public boolean plant(Plant plant){
+        FarmlandIterator ite = getIterator();
+        while(!ite.current().plantCrop(plant)){
+            if(!ite.hasNext())
+                return false;
+            else
+                ite.next();
+        }
+        return true;
     }
 
 }

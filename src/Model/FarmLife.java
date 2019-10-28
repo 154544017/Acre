@@ -23,6 +23,9 @@ public abstract class FarmLife implements Cloneable{
         return clone;
     }
 
+    public FarmLife(){
+
+    }
     public FarmLife(String name, int growthTime) {
         this.name = name;
         this.state = new Youth();
