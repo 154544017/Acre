@@ -6,9 +6,11 @@ import Creation.AbstractFactory.MaleFactory;
 import Creation.Builder.*;
 import Creation.FactoryMethod.*;
 
-import Creation.FlyweightFactory.EggFactory;
-import Model.Goods.Egg;
+
+import Creation.FlyweightFactory.GoodsFactory;
+import Model.Goods.Goods;
 import Model.Plant.Plant;
+import Structure.Composite.GoodsEnum;
 import org.testng.annotations.Test;
 
 
@@ -52,13 +54,14 @@ public class CreationTest {
 
     @Test
     public void goodsFactoryTest() {
-        EggFactory eggFactory = EggFactory.getInstance();
-        Egg egg1 = (Egg)eggFactory.getGoods("low");
-        egg1.getPrice();
-        egg1.getWeight();
-        egg1.show();
-        Egg egg2 = (Egg)eggFactory.getGoods("low");
-        egg2.show();
+        GoodsFactory goodsFactory = GoodsFactory.getInstance();
+        Goods chicken = goodsFactory.getGoods(GoodsEnum.CHICKEN);
+        chicken.show();
+        Goods chicken2 = goodsFactory.getGoods(GoodsEnum.CHICKEN);
+        chicken.show();
+        Goods egg = goodsFactory.getGoods(GoodsEnum.EGG);
+        egg.show();
+        
     }
 
 }
