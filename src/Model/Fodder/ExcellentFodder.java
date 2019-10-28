@@ -10,4 +10,9 @@ public class ExcellentFodder implements Fodder {
         System.out.println("be fed by ExcellentFodder");
     }
 
+    @Override
+    public int getNum() {
+        return 2;
+    }
+
 }

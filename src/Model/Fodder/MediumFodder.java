@@ -9,5 +9,10 @@ public class MediumFodder implements Fodder {
     public void feed() {
         System.out.println("be fed by MediumFodder");
     }
+
+    @Override
+    public int getNum() {
+        return 1;
+    }
 }
 

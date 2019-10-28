@@ -9,6 +9,8 @@ public abstract class FarmLife implements Cloneable{
     private String name;//种类名
     private State state;
     private int growthTime;
+    
+
 
     public abstract boolean isNull();
     public abstract void show();
@@ -29,6 +31,10 @@ public abstract class FarmLife implements Cloneable{
         this.growthTime = growthTime;
     }
 
+    public FarmLife(){
+
+    }
+
     public int getId() {
         return id;
     }
@@ -39,6 +45,10 @@ public abstract class FarmLife implements Cloneable{
 
     public State getState() {
         return state;
+    }
+
+    public void setState(State state) {
+         this.state=state;
     }
 
     public int getGrowthTime() {

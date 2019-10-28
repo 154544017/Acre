@@ -43,12 +43,12 @@ public class CreationTest {
         PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().build();
     }
 
-    @Test
-    public void NullLifeTest(){
-        NullLife phantom =new NullLife();
-        phantom.show();
-        phantom.setId();
-        System.out.println(phantom.isNull());
-        // 待feed
-    }
+//    @Test
+//    public void NullLifeTest(){
+//        NullLife phantom =new NullLife();
+//        phantom.show();
+//        phantom.setId();
+//        System.out.println(phantom.isNull());
+//        // 待feed
+//    }
 }
