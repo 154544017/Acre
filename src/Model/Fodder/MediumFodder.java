@@ -3,11 +3,11 @@ package Model.Fodder;
 /**
  * 目的地B1
  */
-public class MediumFertilzer implements Fertilizer {
+public class MediumFodder implements Fodder {
 
     @Override
-    public void fertilize() {
-        System.out.println("be applied by MediumFertilizer");
+    public void feed() {
+        System.out.println("be fed by MediumFodder");
     }
 }
 

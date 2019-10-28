@@ -1,16 +1,24 @@
 package Test;
+import Creation.AbstractFactory.AnimalFactory;
+import Creation.AbstractFactory.FemaleFactory;
 import Creation.FactoryMethod.PlantFactory;
 import Creation.FactoryMethod.PotatoFactory;
-import Model.Fertilizer.MediumFertilzer;
+import Model.Animal.Animal;
+import Model.Fodder.MediumFodder;
 import Model.Plant.Plant;
 import org.junit.Test;
 public class BridgeTest {
     @Test
     public void bridgeTest(){
-        PlantFactory factory1 = new PotatoFactory();
-        Plant corn1 = factory1.createPlant();
-        corn1.fertilizer=new MediumFertilzer();
-        corn1.show();
-        corn1.fertilizer.fertilize();
+        AnimalFactory factory1 = new FemaleFactory();
+        Animal chicken = factory1.createChicken();
+        chicken.fodder=new MediumFodder();
+        chicken.show();
+        chicken.fodder.feed();
+
+
+
+
+
     }
 }
