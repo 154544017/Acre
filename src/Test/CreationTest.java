@@ -3,14 +3,15 @@ package Test;
 import Creation.AbstractFactory.AnimalFactory;
 import Creation.AbstractFactory.FemaleFactory;
 import Creation.AbstractFactory.MaleFactory;
-import Creation.Builder.*;
+import Creation.Builder.SceneBuilder;
 import Creation.FactoryMethod.*;
 
 import Model.Plant.Plant;
+import Model.Scene.AnimalFarmScene;
+import Model.Scene.PlantFarmScene;
 import org.junit.Test;
 
 public class CreationTest {
-
     @Test
     public void plantFactoryTest(){
         PlantFactory factory1 = new PotatoFactory();
@@ -38,13 +39,8 @@ public class CreationTest {
 
     @Test
     public void builderTest(){
-        AbstractSceneBuilder builder = new PlantFarmSceneBuilder();
-        AbstractSceneDirector director = new PlantFarmSceneDirector(builder);
-        director.construct();
-
-        builder = new AnimalFarmSceneBuilder();
-        director = new AnimalFarmSceneDirector(builder);
-        director.construct();
+        AnimalFarmScene scene1 = (AnimalFarmScene) new SceneBuilder("AnimalFarm").buildBackground().buildDecoration().build();
+        PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().build();
     }
 
 
