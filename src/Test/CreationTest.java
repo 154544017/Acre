@@ -47,5 +47,12 @@ public class CreationTest {
         director.construct();
     }
 
-
+    @Test
+    public void NullLifeTest(){
+        NullLife phantom =new NullLife();
+        phantom.show();
+        phantom.setId();
+        System.out.println(phantom.isNull());
+        // 待feed
+    }
 }
