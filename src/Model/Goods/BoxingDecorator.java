@@ -1,9 +1,9 @@
-package Model.Product;
+package Model.Goods;
 
 public class BoxingDecorator extends ProcessDecorator {
     Product product;
 
-    public BoxingDecorator(Product product,double rate){
+    public BoxingDecorator(Product product, double rate){
         this.product = product;
         this.rate = rate;
     }

@@ -16,7 +16,6 @@ import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
 import Structure.Composite.GoodsEnum;
 import org.junit.Test;
-import org.testng.annotations.Test;
 
 public class CreationTest {
     @Test

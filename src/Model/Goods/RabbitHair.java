@@ -1,4 +1,4 @@
-package Model.Product;
+package Model.Goods;
 
 public class RabbitHair extends Product {
     public RabbitHair(){

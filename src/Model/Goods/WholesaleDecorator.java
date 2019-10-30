@@ -1,8 +1,8 @@
-package Model.Product;
+package Model.Goods;
 
 public class WholesaleDecorator extends ProcessDecorator {
     private Product product;
-    public WholesaleDecorator(Product product,double rate){
+    public WholesaleDecorator(Product product, double rate){
         this.product = product;
         this.rate = rate;
     }
