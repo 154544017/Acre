@@ -7,6 +7,7 @@ public enum GoodsEnum {
     RABBIT_HAIR ("RABBIT_HAIR"),EGG("EGG"),MILK("MILK"),BEEF("BEEF"),
     RABBIT("RABBIT"), CHICKEN("CHICKEN"), CATTLE("CATTLE");
 
+
     private String tag;
     GoodsEnum(String tag){
         this.tag = tag;

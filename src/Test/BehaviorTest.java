@@ -2,21 +2,21 @@ package Test;
 
 import Behavior.ChainOfResponsibility.Handler;
 import Behavior.Command.CommandInvoker;
+import Model.Farmland;
 import Structure.Composite.GoodsEnum;
 import Behavior.Command.StockIn;
 import Behavior.Command.StockOut;
 import Behavior.Interpreter.Instruction;
 import Behavior.Interpreter.Interpreter;
-import Model.Plant.Corn;
-import Model.Plant.Pasture;
 import org.junit.Test;
 
 public class BehaviorTest {
     @Test
     public void ChainOfResponsibilityTest(){
         Handler chainOfHandler = Handler.getChainOfHandler();
-        chainOfHandler.selectHandler(Handler.WATERING, new Pasture());
-        chainOfHandler.selectHandler(Handler.FERTILIZING, new Corn());
+        chainOfHandler.selectHandler(Handler.SOFT, new Farmland());
+        chainOfHandler.selectHandler(Handler.MIXED, new Farmland());
+        chainOfHandler.selectHandler(Handler.HARD, new Farmland());
     }
 
     @Test

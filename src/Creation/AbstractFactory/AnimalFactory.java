@@ -6,7 +6,9 @@ import Model.Plant.*;
 import java.util.HashMap;
 
 public abstract class AnimalFactory {
+    
     protected static HashMap<String, Animal> animalMap = new HashMap<String, Animal>(){
+
         {
             put("MaleRabbit",new MaleRabbit());
             put("FemaleRabbit", new FemaleRabbit());
