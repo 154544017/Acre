@@ -6,17 +6,21 @@ import Creation.AbstractFactory.MaleFactory;
 import Creation.Builder.SceneBuilder;
 import Creation.FactoryMethod.*;
 
+import Creation.FlyweightFactory.GoodsFactory;
+import Model.Goods.Goods;
 import Model.NullLife.NullLife;
 import Model.Plant.Plant;
 import Model.Plant.Potato;
 import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
+import Structure.Composite.GoodsEnum;
 import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class CreationTest {
     @Test
-    public void plantFactoryTest(){
+    public void plantFactoryTest() {
         PlantFactory factory1 = new PotatoFactory();
         Plant corn1 = factory1.createPlant();
         Plant corn2 = factory1.createPlant();
@@ -27,7 +31,7 @@ public class CreationTest {
     }
 
     @Test
-    public void animalFactoryTest(){
+    public void animalFactoryTest() {
         AnimalFactory factory1 = new MaleFactory();
         AnimalFactory factory2 = new FemaleFactory();
         for (int i = 0; i < 2; i++) {
@@ -41,7 +45,7 @@ public class CreationTest {
     }
 
     @Test
-    public void builderTest(){
+    public void builderTest() {
         //AnimalFarmScene scene1 = (AnimalFarmScene) new SceneBuilder("AnimalFarm").buildBackground().buildDecoration().build();
         PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().build();
         Rancher rancher = new Rancher("omf");
@@ -51,7 +55,7 @@ public class CreationTest {
 
     }
 
-//    @Test
+    //    @Test
 //    public void NullLifeTest(){
 //        NullLife phantom =new NullLife();
 //        phantom.show();
@@ -59,4 +63,15 @@ public class CreationTest {
 //        System.out.println(phantom.isNull());
 //        // 待feed
 //    }
+    @Test
+    public void goodsFactoryTest() {
+        GoodsFactory goodsFactory = GoodsFactory.getInstance();
+        Goods chicken = goodsFactory.getGoods(GoodsEnum.CHICKEN);
+        chicken.show();
+        Goods chicken2 = goodsFactory.getGoods(GoodsEnum.CHICKEN);
+        chicken.show();
+        Goods egg = goodsFactory.getGoods(GoodsEnum.EGG);
+        egg.show();
+
+    }
 }
