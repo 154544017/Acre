@@ -1,6 +1,6 @@
 package Behavior.ChainOfResponsibility;
 
-import Model.FarmLife;
+import Model.Plant.Plant;
 
 public class WateringHandler extends Handler {
 
@@ -10,7 +10,8 @@ public class WateringHandler extends Handler {
     }
 
     @Override
-    protected void handle(FarmLife farmLife) {
-
+    protected void handle(Plant plant) {
+        System.out.println("给" + plant.getName() + plant.getId() + "浇水");
+        plant.grow();
     }
 }
