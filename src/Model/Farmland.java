@@ -1,17 +1,25 @@
 package Model;
 
+import Behavior.ChainOfResponsibility.Handler;
 import Model.Plant.Plant;
 import Model.State.Maturation;
 
 public class Farmland {
+    public static int SOFT = 1;
+    public static int MIXED = 2;
+    public static int HARD = 3;
+    public static int HARDNESSTYPE[] = {SOFT,MIXED,HARD};
     private static int count = 0;
     public Integer landId;
     public Plant crop;
     public boolean isEmpty;
-
+    private int hardness;
     public Farmland(){
         this.isEmpty =true;
         this.landId = count++;
+        this.hardness = HARDNESSTYPE[(int)(0+Math.random()*(2-1+1))];
+        Handler chainOfHandler = Handler.getChainOfHandler();
+        chainOfHandler.selectHandler(hardness,this);
     }
 
     public boolean plantCrop(Plant crop){
