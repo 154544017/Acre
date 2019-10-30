@@ -42,12 +42,12 @@ public class CreationTest {
 
     @Test
     public void builderTest(){
-        //AnimalFarmScene scene1 = (AnimalFarmScene) new SceneBuilder("AnimalFarm").buildBackground().buildDecoration().build();
-        PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().build();
-        Rancher rancher = new Rancher("omf");
-        scene2.setRancher(rancher);
-        scene2.plant(new PotatoFactory().createPlant());
-        scene2.harvest();
+        PlantFarmScene scene1 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().buildOthers().build();
+//        PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("Observer").buildBackground().buildDecoration().build();
+//        Rancher rancher = new Rancher("omf");
+//        scene2.setRancher(rancher);
+//        scene2.plant(new PotatoFactory().createPlant());
+//        scene2.harvest();
 
     }
 
