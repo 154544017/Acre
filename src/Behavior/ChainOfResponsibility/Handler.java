@@ -1,34 +1,31 @@
 package Behavior.ChainOfResponsibility;
 
-import Model.FarmLife;
-import Model.Plant.Plant;
+import Model.Farmland;
 
 public abstract class Handler {
-    public static int WATERING = 1;
-    public static int FERTILIZING = 2;
+    public static int SOFT = 1;
+    public static int MIXED = 2;
+    public static int HARD = 3;
 
     protected int responsibility;
     protected Handler nextHandler;
 
     public static Handler getChainOfHandler(){
-        return new WateringHandler();
+        return new HumanHandler();
     }
 
     public void setNextHandler(Handler nextHandler){
         this.nextHandler = nextHandler;
     }
 
-    public void selectHandler(int handler, Plant plant){
+    public void selectHandler(int handler, Farmland farmland){
         if(this.responsibility == handler){
-            handle(plant);
-        }else{
-            if(nextHandler != null){
-                nextHandler.handle(plant);
-            }else{
-                System.out.println("无效请求！");
-            }
+            handle(farmland);
+        }
+        if(nextHandler != null){
+            nextHandler.selectHandler(handler, farmland);
         }
     }
 
-    abstract protected void handle(Plant plant);
+    abstract protected void handle(Farmland farmland);
 }

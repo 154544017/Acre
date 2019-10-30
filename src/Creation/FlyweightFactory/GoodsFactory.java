@@ -12,7 +12,7 @@ public class GoodsFactory {
     public static GoodsFactory getInstance() {
         return ourInstance;
     }
-    private static Hashtable<GoodsEnum,Integer> priceTable = new Hashtable<>() {
+    private static Hashtable<GoodsEnum,Integer> priceTable = new Hashtable<GoodsEnum, Integer>() {
         {
             put(GoodsEnum.CABBAGE,4);
             put(GoodsEnum.CABBAGE_SEED,1);
