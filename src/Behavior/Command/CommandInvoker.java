@@ -10,10 +10,10 @@ public class CommandInvoker {
         commandList.add(command);
     }
 
-    public void execPurchaseTask(){
+    public void execCommand(){
         for(Command command : commandList){
             command.execute();
-            commandList.remove(command);
         }
+        commandList.clear();
     }
 }
