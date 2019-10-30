@@ -34,9 +34,6 @@ public abstract class FarmLife implements Cloneable{
         this.growthTime = growthTime;
     }
 
-    public FarmLife(){
-
-    }
 
     public int getId() {
         return id;
