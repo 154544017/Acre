@@ -18,12 +18,12 @@ public class FarmlandSet  implements Container {
         }
     }
     @Override
-    public FarmlandIterator getIterator() {
-        return new FarmlandIterator(landMap);
+    public FarmlandIteratorAndProxy getIterator() {
+        return new FarmlandIteratorAndProxy(landMap);
     }
 
     public void reapAllFarmland(){
-        FarmlandIterator ite = getIterator();
+        FarmlandIteratorAndProxy ite = getIterator();
         ite.current().reapCrop();
         while(ite.hasNext()){
             ite.next().reapCrop();
@@ -31,7 +31,7 @@ public class FarmlandSet  implements Container {
     }
 
     public boolean plant(Plant plant){
-        FarmlandIterator ite = getIterator();
+        FarmlandIteratorAndProxy ite = getIterator();
         while(!ite.current().plantCrop(plant)){
             if(!ite.hasNext())
                 return false;

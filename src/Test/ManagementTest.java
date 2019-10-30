@@ -4,7 +4,7 @@ import Creation.FactoryMethod.PlantFactory;
 import Creation.FactoryMethod.PotatoFactory;
 import Management.ClubManagement.FarmerClub;
 import Management.FarmInfoManagement.FarmInfoTaker;
-import Management.FarmlandManagement.FarmlandIterator;
+import Management.FarmlandManagement.FarmlandIteratorAndProxy;
 import Management.FarmlandManagement.FarmlandSet;
 import Model.FarmInfo;
 import Model.NPC;
@@ -17,7 +17,7 @@ public class ManagementTest {
     public void farmlandIteratorTest(){
         System.out.println("检查农场中农地状态：");
         FarmlandSet farmlandSet = new FarmlandSet(3);
-        FarmlandIterator ite = farmlandSet.getIterator();
+        FarmlandIteratorAndProxy ite = farmlandSet.getIterator();
         PlantFactory factory1 = new PotatoFactory();
         Plant corn1 = factory1.createPlant();
         ite.current().plantCrop(corn1);

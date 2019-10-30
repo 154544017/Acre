@@ -4,11 +4,11 @@ import Model.Farmland;
 
 import java.util.Vector;
 
-public class FarmlandIterator implements Iterator {
+public class FarmlandIteratorAndProxy implements Iterator {
     private Vector<Vector<Farmland>> landMap;
     private int positionX;
     private int positionY;
-    public  FarmlandIterator(Vector<Vector<Farmland>> landMap){
+    public FarmlandIteratorAndProxy(Vector<Vector<Farmland>> landMap){
         this.landMap = landMap;
         positionX = 0;
         positionY = 0;
