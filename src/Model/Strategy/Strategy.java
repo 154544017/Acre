@@ -1,7 +1,9 @@
 package Model.Strategy;
 
+import Model.Plant.Plant;
+
 public interface Strategy{
 
-    void strategyInterface(int farmLandNo);
+    void strategyInterface(Plant plant);
 
 }

@@ -17,13 +17,6 @@ public class BridgeTest {
         AnimalFactory factory1 = new MaleFactory();
 
         Animal cow=factory1.createCattle();
-        a.getAnimalList().add(cow);
-        a.feedAnimal(cow.getId(),"MediumFodder");
-
-
-
-
-
-
+        a.feedAnimal(cow,"MediumFodder");
     }
 }

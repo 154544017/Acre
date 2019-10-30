@@ -1,5 +1,7 @@
 package Model.Strategy;
 
+import Model.Plant.Plant;
+
 public class Context{
 
     Strategy strategy;
@@ -8,8 +10,8 @@ public class Context{
         this.strategy = strategy;
     }
 
-    public void contextInterface(int farmLandNo) {
-        strategy.strategyInterface(farmLandNo);
+    public void contextInterface(Plant plant) {
+        strategy.strategyInterface(plant);
     }
 
 }

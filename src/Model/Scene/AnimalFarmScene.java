@@ -24,34 +24,28 @@ public class AnimalFarmScene extends Scene {
         return animalList;
     }
 
-    public boolean feedAnimal(int id,String className) {
-        for (Animal a : animalList) {
-            if (a.getId() == id) {
-                if (a.isNull() == false) {
-                    a.show();
+    public boolean feedAnimal(Animal a, String className) {
+        if (!a.isNull()) {
+            a.show();
 
-                    if (className.equals("MediumFodder")) {
-                        a.fodder = new MediumFodder();
-                    } else {
-                        a.fodder = new ExcellentFodder();
-                    }
-                    a.fodder.feed();
-                    if (a.getState().getNum() + a.fodder.getNum() == 1) {
-                        a.setState(new Youth());
-                    } else if (a.getState().getNum() + a.fodder.getNum() == 2) {
-                        a.setState(new Growth());
-                    } else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
-                        a.setState(new Maturation());
-                    }
-                    return true;
-                } else {
-                    a.show();
-                    return false;
-                }
+            if (className.equals("MediumFodder")) {
+                a.fodder = new MediumFodder();
+            } else {
+                a.fodder = new ExcellentFodder();
             }
+            a.fodder.feed();
+            if (a.getState().getNum() + a.fodder.getNum() == 1) {
+                a.setState(new Youth());
+            } else if (a.getState().getNum() + a.fodder.getNum() == 2) {
+                a.setState(new Growth());
+            } else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
+                a.setState(new Maturation());
+            }
+            return true;
+        } else {
+            a.show();
             return false;
         }
-        return false;
     }
 
     @Override
