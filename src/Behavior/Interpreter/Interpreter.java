@@ -1,9 +1,8 @@
 package Behavior.Interpreter;
 
 public class Interpreter {
-    private Instruction instruction;
 
-    public void interpret(){
+    public void interpret(Instruction instruction){
         if(instruction.getCurrentToken().equalsIgnoreCase("Select")){
             SelectInstructionNode node = new SelectInstructionNode();
             node.interpreter(instruction);

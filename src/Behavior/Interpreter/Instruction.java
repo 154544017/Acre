@@ -6,7 +6,7 @@ public class Instruction {
     private String currentToken;
 
     public Instruction(String text){
-        tokens = text.split("");
+        tokens = text.split(" ");
         getNextToken();
     }
 
