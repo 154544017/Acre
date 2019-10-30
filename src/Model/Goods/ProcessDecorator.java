@@ -1,4 +1,4 @@
-package Model.Product;
+package Model.Goods;
 
 public abstract class ProcessDecorator extends Product {
     protected double rate;

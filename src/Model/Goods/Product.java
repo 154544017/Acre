@@ -1,4 +1,4 @@
-package Model.Product;
+package Model.Goods;
 
 public abstract class Product {
     protected String description = "Unkonwn";

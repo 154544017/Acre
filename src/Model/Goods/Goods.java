@@ -3,7 +3,7 @@ package Model.Goods;
 import Structure.Composite.GoodsEnum;
 
 
-public class Goods {
+public class Goods extends Product{
 //    private String name;
     private int price;
 //    private int weight;
@@ -16,6 +16,7 @@ public class Goods {
     public Goods(GoodsEnum goodsEnum1) {
         goodsEnum = goodsEnum1;
         price = -1;
+        description = goodsEnum1.toString();
         System.out.println("创建"+goodsEnum1);
     }
 
@@ -26,9 +27,10 @@ public class Goods {
         System.out.println("我是"+goodsEnum);
         System.out.println("价格为"+price);
     }
-    public int getPrice() {
+
+
+    @Override
+    public double price() {
         return price;
     }
-
-
 }

@@ -1,20 +1,24 @@
 package Test;
 
-import Model.Product.*;
+import Creation.FlyweightFactory.GoodsFactory;
+import Model.Goods.*;
+import Structure.Composite.GoodsEnum;
 import org.junit.Test;
 
 public class DecoratorTest {
     @Test
     public void DecoratorProduct(){
-        Product beef = new Beef();
-        Product gabbageVeg = new CabbageVeg();
-        Product grassVeg = new GrassVeg();
-        Product egg = new Egg();
-        Product rabbitHair = new RabbitHair();
-        Product rabbitMeat = new RabbitMeat();
-        Product potatoVeg = new PotatoVeg();
-        Product chickenMeat = new ChickenMeat();
-        Product cornVeg = new CornVeg();
+        GoodsFactory goodsFactory = GoodsFactory.getInstance();
+
+        Product beef = goodsFactory.getGoods(GoodsEnum.BEEF);
+        Product cabbageVeg = goodsFactory.getGoods(GoodsEnum.CABBAGE);
+        Product grassVeg = goodsFactory.getGoods(GoodsEnum.PASTURE);
+        Product egg = goodsFactory.getGoods(GoodsEnum.EGG);
+        Product rabbitHair = goodsFactory.getGoods(GoodsEnum.RABBIT_HAIR);
+        Product rabbitMeat = goodsFactory.getGoods(GoodsEnum.RABBIT);
+        Product potatoVeg = goodsFactory.getGoods(GoodsEnum.POTATO);
+        Product chickenMeat = goodsFactory.getGoods(GoodsEnum.CHICKEN);
+        Product cornVeg = goodsFactory.getGoods(GoodsEnum.CORN);
 
         System.out.println(beef.toString());
         System.out.println(egg.toString());
@@ -23,7 +27,7 @@ public class DecoratorTest {
         System.out.println(chickenMeat.toString());
         System.out.println(potatoVeg.toString());
         System.out.println(grassVeg.toString());
-        System.out.println(gabbageVeg.toString());
+        System.out.println(cabbageVeg.toString());
         System.out.println(cornVeg.toString());
 
         double boxDiscount = 5;
@@ -31,7 +35,7 @@ public class DecoratorTest {
 
         ProcessDecorator beefBoxing = new BoxingDecorator(beef,boxDiscount);
         ProcessDecorator grassBoxing = new BoxingDecorator(grassVeg,boxDiscount);
-        ProcessDecorator gabbageBoxing = new BoxingDecorator(gabbageVeg,boxDiscount);
+        ProcessDecorator gabbageBoxing = new BoxingDecorator(cabbageVeg,boxDiscount);
         ProcessDecorator eggBoxing = new BoxingDecorator(egg,boxDiscount);
         ProcessDecorator rabbitHairBoxing = new BoxingDecorator(rabbitHair,boxDiscount);
         ProcessDecorator rabbitMeatBoxing = new BoxingDecorator(rabbitMeat,boxDiscount);
