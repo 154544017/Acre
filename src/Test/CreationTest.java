@@ -61,7 +61,7 @@ public class CreationTest {
         chicken.show();
         Goods egg = goodsFactory.getGoods(GoodsEnum.EGG);
         egg.show();
-        
+
     }
 
 }
