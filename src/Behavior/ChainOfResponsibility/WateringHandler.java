@@ -11,7 +11,7 @@ public class WateringHandler extends Handler {
 
     @Override
     protected void handle(Plant plant) {
-        System.out.println("给" + plant.getName() + plant.getId() + "浇水");
+        System.out.println("给" + plant.getSelf()+ "浇水");
         plant.grow();
     }
 }

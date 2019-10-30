@@ -3,7 +3,14 @@ import Model.FarmLife;
 public class NullLife extends FarmLife {
     public NullLife(){
         super();
-    };
+    }
+
+    @Override
+    public String getSelf() {
+        return null;
+    }
+
+
     @Override
     public boolean isNull(){return true;}
 

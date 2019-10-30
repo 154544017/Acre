@@ -19,7 +19,7 @@ public class Farmland {
         if(isEmpty) {
             this.crop = crop;
             this.isEmpty = false;
-            System.out.println(landId.toString() + "号农地种下作物:"+crop.getName());
+            System.out.println(landId.toString() + "号农地种下作物:"+crop.getSelf());
         }else{
             System.out.println(landId.toString() + "号农地已有作物");
             isSuccess =false;
@@ -31,11 +31,11 @@ public class Farmland {
         if(isEmpty)
             return;
         if(crop.getState().getClass().equals(Maturation.class)){
-            System.out.println(landId.toString() + "号农地收获作物:"+crop.getName());
+            System.out.println(landId.toString() + "号农地收获作物:"+crop.getSelf());
             this.crop = null;
             this.isEmpty = true;
         }else{
-            System.out.println(landId.toString() + "号农地作物"+crop.getName()+"尚未成熟");
+            System.out.println(landId.toString() + "号农地作物"+crop.getSelf()+"尚未成熟");
         }
     }
 
@@ -43,7 +43,7 @@ public class Farmland {
         if(isEmpty){
             System.out.println(landId.toString() + "号农地为空地");
         }else{
-            System.out.println(landId.toString() + "号有农地作物"+crop.getName()+",该作物：");
+            System.out.println(landId.toString() + "号有农地作物"+crop.getSelf()+",该作物：");
             crop.show();
         }
     }

@@ -5,9 +5,8 @@ import Model.Fodder.*;
 
 public abstract class Plant extends FarmLife{
 
-    public Plant(String name, int growthTime) {
-        super(name, growthTime);
+    public Plant(int growthTime) {
+        super(growthTime);
     }
 
-    public abstract void grow();
 }

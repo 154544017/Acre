@@ -5,13 +5,19 @@ import Model.State.State;
 //公鸡
 public class Rooster extends Chicken {
     private static int count = 0;
+    private static String name = "Rooster";
     public Rooster() {
-        super("Rooster",10,10);
+        super(10,10);
+    }
+
+    @Override
+    public String getSelf() {
+        return name + id;
     }
 
     @Override
     public void eat() {
-        System.out.println(getName() + getId() + "正在吃东西");
+        System.out.println(getSelf() + "正在吃东西");
     }
 
     @Override
@@ -21,7 +27,7 @@ public class Rooster extends Chicken {
 
     @Override
     public void show() {
-        System.out.println("我是" + getName() + getId());
+        System.out.println("我是" + getSelf());
     }
 
     @Override

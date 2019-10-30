@@ -5,10 +5,11 @@ import Model.Plant.Plant;
 import Model.Rancher;
 
 public class PlantFarmScene extends Scene {
-    private FarmlandSet farmlandSet = new FarmlandSet(5);
+    private FarmlandSet farmlandSet;
     private Rancher rancher;
 
-    public PlantFarmScene(){
+    public PlantFarmScene(FarmlandSet set){
+        farmlandSet = set;
         System.out.println("农场加载成功");
     }
 

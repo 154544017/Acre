@@ -10,7 +10,7 @@ public class FertilizingHandler extends Handler {
 
     @Override
     protected void handle(Plant plant) {
-        System.out.println("给" + plant.getName() + plant.getId() + "施肥");
+        System.out.println("给" + plant.getSelf() + "施肥");
         plant.grow();
     }
 }

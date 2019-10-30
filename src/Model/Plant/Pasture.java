@@ -4,10 +4,16 @@ import Model.State.State;
 import Model.State.Youth;
 
 public class Pasture extends Plant {
+    private static String name = "Pasture";
     private static int count = 0;
 
     public Pasture() {
-        super("Pasture", 20);
+        super( 20);
+    }
+
+    @Override
+    public String getSelf() {
+        return name + id;
     }
 
     @Override
@@ -17,7 +23,7 @@ public class Pasture extends Plant {
 
     @Override
     public void show() {
-        System.out.println("我是"+ getName() + getId());
+        System.out.println("我是"+ name + getId());
     }
 
     @Override
@@ -27,6 +33,6 @@ public class Pasture extends Plant {
 
     @Override
     public void grow() {
-        System.out.println(getName() + getId() + "正在生长");
+        System.out.println(name + getId() + "正在生长");
     }
 }

@@ -1,13 +1,18 @@
 package Model.Plant;
 
-import Model.State.State;
-import Model.State.Youth;
+
 
 public class ChineseCabbage extends Plant {
+    private static String name = "ChineseCabbage";
     private static int count = 0;
 
     public ChineseCabbage() {
-        super("ChineseCabbage", 28);
+        super(28);
+    }
+
+    @Override
+    public String getSelf() {
+        return name + count;
     }
 
     @Override
@@ -17,7 +22,7 @@ public class ChineseCabbage extends Plant {
 
     @Override
     public void show() {
-        System.out.println("我是"+ getName() + getId());
+        System.out.println("我是"+ name + getId());
     }
 
     @Override
@@ -27,6 +32,6 @@ public class ChineseCabbage extends Plant {
 
     @Override
     public void grow() {
-        System.out.println(getName() + getId() + "正在生长");
+        System.out.println(name+ getId() + "正在生长");
     }
 }

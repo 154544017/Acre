@@ -10,8 +10,8 @@ public abstract class Animal extends FarmLife {
     //引用桥接口
     public Fodder fodder;
 
-    public Animal(String name, int growthTime, int feedAmount) {
-        super(name, growthTime);
+    public Animal(int growthTime, int feedAmount) {
+        super(growthTime);
         this.feedAmount = feedAmount;
     }
 

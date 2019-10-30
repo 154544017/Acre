@@ -3,11 +3,17 @@ package Model.Plant;
 import Model.State.Youth;
 
 public class Potato extends Plant {
+    private static String name = "Potato";
     private static int count = 0;
 
 
     public Potato() {
-        super("Potato",10);
+        super(10);
+    }
+
+    @Override
+    public String getSelf() {
+        return name + id;
     }
 
     @Override
@@ -17,17 +23,12 @@ public class Potato extends Plant {
 
     @Override
     public void show() {
-        System.out.println("我是"+ getName() + getId());
+        System.out.println("我是"+ name + getId());
     }
 
     @Override
     public void setId() {
         this.id = count++;
-    }
-
-    @Override
-    public void grow() {
-        System.out.println(getName() + getId() + "正在生长");
     }
 
 }

@@ -29,19 +29,7 @@ public class AnimalFarmScene extends Scene {
             if (a.getId() == id) {
                 if (a.isNull() == false) {
                     a.show();
-                    Class clz = null;
-//                    try {
-//                        clz = Class.forName(className);
-//                    } catch (ClassNotFoundException e) {
-//                        e.printStackTrace();
-//                    }
-//                    try {
-//                        a.fodder= (Fodder) clz.newInstance();
-//                    } catch (InstantiationException e) {
-//                        e.printStackTrace();
-//                    } catch (IllegalAccessException e) {
-//                        e.printStackTrace();
-//                    }
+
                     if (className.equals("MediumFodder")) {
                         a.fodder = new MediumFodder();
                     } else {
@@ -55,7 +43,6 @@ public class AnimalFarmScene extends Scene {
                     } else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
                         a.setState(new Maturation());
                     }
-                    a.getState().react();
                     return true;
                 } else {
                     a.show();

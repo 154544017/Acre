@@ -10,6 +10,5 @@ public class CornFactory extends PlantFactory {
         Corn corn = (Corn)plantMap.get("Corn").clone();
         corn.setId();
         return corn;
-
     }
 }

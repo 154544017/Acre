@@ -1,15 +1,21 @@
 package Model.Animal;
 
 public class MaleRabbit extends Rabbit {
+    private static String name = "MaleRabbit";
     private static int count = 0;
 
     public MaleRabbit() {
-        super("MaleRabbit", 10, 10);
+        super(10, 10);
+    }
+
+    @Override
+    public String getSelf() {
+        return name + id;
     }
 
     @Override
     public void eat() {
-        System.out.println(getName() + getId() + "正在吃东西");
+        System.out.println(getSelf() + "正在吃东西");
     }
 
     @Override
@@ -19,7 +25,7 @@ public class MaleRabbit extends Rabbit {
 
     @Override
     public void show() {
-        System.out.println("我是" + getName() + getId());
+        System.out.println("我是" + getSelf());
     }
 
     @Override
