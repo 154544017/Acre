@@ -10,6 +10,7 @@ import Model.FarmInfo;
 import Model.NPC;
 import Model.Plant.Plant;
 import Model.Rancher;
+import Structure.Composite.GoodsEnum;
 import org.junit.Test;
 
 public class ManagementTest {
@@ -73,6 +74,13 @@ public class ManagementTest {
         p1.sendMessageToSomeone(me,"充钱吧！！");
         p2.sendMessageToSomeone(me,"多加肥料！！");
         p3.sendMessageToSomeone(me,"商店里买激素！！");
+
+        p1.sendGiftToSomeone(me, GoodsEnum.CHICKEN,2);
+        p2.sendGiftToAll(GoodsEnum.CHICKEN,5);
+        me.sendGiftToAll(GoodsEnum.CHICKEN,1);
+        me.sendGiftToSomeone(p3,GoodsEnum.CHICKEN,1);
+        me.sendGiftToAll(GoodsEnum.CHICKEN,5);
+        me.sendGiftToSomeone(p3,GoodsEnum.BEEF,10);
     }
 
 
