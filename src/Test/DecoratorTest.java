@@ -2,8 +2,12 @@ package Test;
 
 import Creation.FlyweightFactory.GoodsFactory;
 import Model.Goods.*;
+import Model.Rancher;
+import Operation.OperationFacade;
 import Structure.Composite.GoodsEnum;
 import org.junit.Test;
+
+import java.util.List;
 
 public class DecoratorTest {
     @Test
@@ -30,18 +34,17 @@ public class DecoratorTest {
         System.out.println(cabbageVeg.toString());
         System.out.println(cornVeg.toString());
 
-        double boxDiscount = 5;
-        double wholesaleDiscount = 0.02;
 
-        ProcessDecorator beefBoxing = new BoxingDecorator(beef,boxDiscount);
-        ProcessDecorator grassBoxing = new BoxingDecorator(grassVeg,boxDiscount);
-        ProcessDecorator gabbageBoxing = new BoxingDecorator(cabbageVeg,boxDiscount);
-        ProcessDecorator eggBoxing = new BoxingDecorator(egg,boxDiscount);
-        ProcessDecorator rabbitHairBoxing = new BoxingDecorator(rabbitHair,boxDiscount);
-        ProcessDecorator rabbitMeatBoxing = new BoxingDecorator(rabbitMeat,boxDiscount);
-        ProcessDecorator potatoBoxing = new BoxingDecorator(potatoVeg,boxDiscount);
-        ProcessDecorator chickenBoxing = new BoxingDecorator(chickenMeat,boxDiscount);
-        ProcessDecorator cornBoxing = new BoxingDecorator(cornVeg,boxDiscount);
+
+        ProcessDecorator beefBoxing = new BoxingDecorator(beef);
+        ProcessDecorator grassBoxing = new BoxingDecorator(grassVeg);
+        ProcessDecorator gabbageBoxing = new BoxingDecorator(cabbageVeg);
+        ProcessDecorator eggBoxing = new BoxingDecorator(egg);
+        ProcessDecorator rabbitHairBoxing = new BoxingDecorator(rabbitHair);
+        ProcessDecorator rabbitMeatBoxing = new BoxingDecorator(rabbitMeat);
+        ProcessDecorator potatoBoxing = new BoxingDecorator(potatoVeg);
+        ProcessDecorator chickenBoxing = new BoxingDecorator(chickenMeat);
+        ProcessDecorator cornBoxing = new BoxingDecorator(cornVeg);
 
         System.out.println(beefBoxing.toString());
         System.out.println(grassBoxing.toString());
@@ -53,15 +56,15 @@ public class DecoratorTest {
         System.out.println(chickenBoxing.toString());
         System.out.println(cornBoxing.toString());
 
-        ProcessDecorator beefBoxingWholesale = new WholesaleDecorator(beefBoxing,wholesaleDiscount);
-        ProcessDecorator grassBoxingWholesale = new WholesaleDecorator(grassBoxing,wholesaleDiscount);
-        ProcessDecorator gabbageBoxingWholesale = new WholesaleDecorator(gabbageBoxing,wholesaleDiscount);
-        ProcessDecorator eggBoxingWholesale = new WholesaleDecorator(eggBoxing,wholesaleDiscount);
-        ProcessDecorator rabbitHairBoxingWholesale = new WholesaleDecorator(rabbitHairBoxing,wholesaleDiscount);
-        ProcessDecorator rabbitMeatBoxingWholesale = new WholesaleDecorator(rabbitMeatBoxing,wholesaleDiscount);
-        ProcessDecorator potatoBoxingWholesale = new WholesaleDecorator(potatoBoxing,wholesaleDiscount);
-        ProcessDecorator chickenBoxingWholesale = new WholesaleDecorator(chickenBoxing,wholesaleDiscount);
-        ProcessDecorator cornBoxingWholesale = new WholesaleDecorator(cornBoxing,wholesaleDiscount);
+        ProcessDecorator beefBoxingWholesale = new WholesaleDecorator(beefBoxing);
+        ProcessDecorator grassBoxingWholesale = new WholesaleDecorator(grassBoxing);
+        ProcessDecorator gabbageBoxingWholesale = new WholesaleDecorator(gabbageBoxing);
+        ProcessDecorator eggBoxingWholesale = new WholesaleDecorator(eggBoxing);
+        ProcessDecorator rabbitHairBoxingWholesale = new WholesaleDecorator(rabbitHairBoxing);
+        ProcessDecorator rabbitMeatBoxingWholesale = new WholesaleDecorator(rabbitMeatBoxing);
+        ProcessDecorator potatoBoxingWholesale = new WholesaleDecorator(potatoBoxing);
+        ProcessDecorator chickenBoxingWholesale = new WholesaleDecorator(chickenBoxing);
+        ProcessDecorator cornBoxingWholesale = new WholesaleDecorator(cornBoxing);
 
         System.out.println(beefBoxingWholesale.toString());
         System.out.println(grassBoxingWholesale.toString());
@@ -72,6 +75,19 @@ public class DecoratorTest {
         System.out.println(potatoBoxingWholesale.toString());
         System.out.println(chickenBoxingWholesale.toString());
         System.out.println(cornBoxingWholesale.toString());
+
+    }
+
+    @Test
+    public void testSaleOperation(){
+        Rancher rancher = new Rancher("ppp");
+        OperationFacade operationFacade = new OperationFacade(rancher);
+        operationFacade.buy(GoodsEnum.CABBAGE_SEED,10);
+        operationFacade.sell(GoodsEnum.CABBAGE_SEED,1,null);
+        operationFacade.sell(GoodsEnum.CABBAGE_SEED,2, new String[]{"0"});
+        operationFacade.sell(GoodsEnum.CABBAGE_SEED,2,new String[]{"1"});
+        operationFacade.sell(GoodsEnum.CABBAGE_SEED,5,new String[]{"1","0","-1"});
+        operationFacade.sell(GoodsEnum.CABBAGE_SEED,1,null);
 
     }
 

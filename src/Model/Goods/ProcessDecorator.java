@@ -1,7 +1,7 @@
 package Model.Goods;
 
 public abstract class ProcessDecorator extends Product {
-    protected double rate;
+    protected double rate ;
     public abstract String getDescription();
 
     @Override

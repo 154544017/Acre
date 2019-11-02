@@ -2,9 +2,9 @@ package Model.Goods;
 
 public class WholesaleDecorator extends ProcessDecorator {
     private Product product;
-    public WholesaleDecorator(Product product, double rate){
+    public WholesaleDecorator(Product product){
         this.product = product;
-        this.rate = rate;
+        this.rate = 0.05;
     }
 
 
