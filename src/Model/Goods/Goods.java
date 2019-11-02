@@ -30,6 +30,7 @@ public class Goods extends Product {
     }
 
 
+
     @Override
     public double price() {
         return price;

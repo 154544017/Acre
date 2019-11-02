@@ -1,6 +1,12 @@
 package Model.Animal;
 
+import Creation.FlyweightFactory.GoodsFactory;
+import Model.Goods.Goods;
+import Model.Goods.Product;
 import Model.State.State;
+import Structure.Composite.GoodsEnum;
+
+import java.sql.SQLOutput;
 
 //母鸡
 public class Hen extends Chicken {
@@ -13,6 +19,13 @@ public class Hen extends Chicken {
     @Override
     public String getSelf() {
         return null;
+    }
+
+    @Override
+    public Product getProduct() {
+        Goods egg= GoodsFactory.getInstance().getGoods(GoodsEnum.EGG);
+        System.out.println(this.getClass().getSimpleName()+" harvest egg");
+        return egg;
     }
 
     @Override

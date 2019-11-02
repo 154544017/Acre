@@ -3,7 +3,7 @@ package Model.State;
 public class Growth implements State{
     @Override
     public void react() {
-        System.out.println(this.getClass().getName() + ":" + "react:" + "状态变为生长期");
+        System.out.println(this.getClass().getSimpleName() + ":" + "react:" + "状态变为生长期");
     }
 
     @Override

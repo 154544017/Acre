@@ -1,6 +1,10 @@
 package Model.Animal;
 
+import Creation.FlyweightFactory.GoodsFactory;
+import Model.Goods.Goods;
+import Model.Goods.Product;
 import Model.State.State;
+import Structure.Composite.GoodsEnum;
 
 public class Cow extends Cattle {
     private static String name = "Cow";
@@ -12,6 +16,13 @@ public class Cow extends Cattle {
     @Override
     public String getSelf() {
         return null;
+    }
+
+    @Override
+    public Product getProduct() {
+        Goods hair= GoodsFactory.getInstance().getGoods(GoodsEnum.MILK);
+        System.out.println(this.getClass().getSimpleName()+" harvest milk");
+        return hair;
     }
 
     @Override

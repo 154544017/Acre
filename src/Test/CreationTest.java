@@ -50,7 +50,7 @@ public class CreationTest {
 //        Rancher rancher = new Rancher("omf");
 //        scene2.setRancher(rancher);
 //        scene2.plant(new PotatoFactory().createPlant());
-//        scene2.harvest();
+//        scene2.harvestPlant();
 
 
     }

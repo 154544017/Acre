@@ -1,9 +1,11 @@
 package Test;
 
+import Creation.AbstractFactory.MaleFactory;
 import Creation.Builder.SceneBuilder;
 import Creation.FactoryMethod.ChineseCabbageFactory;
 import Creation.FactoryMethod.CornFactory;
 import Creation.FactoryMethod.PotatoFactory;
+import Model.Animal.MaleRabbit;
 import Model.Plant.ChineseCabbage;
 import Model.Plant.Corn;
 import Model.Plant.Potato;
@@ -46,12 +48,17 @@ public class GameTest {
 
     @Test
     public void gameTest1(){
-//        //加载玩家信息
-//        Rancher rancher = new Rancher("wn");
-//        //进入牧场
-//        AnimalFarmScene scene = (AnimalFarmScene)new SceneBuilder("AnimalFarm", rancher).construct();
-//        //查看牧场信息
-//        scene.showAnimalFarm();
-
+        //加载玩家信息
+        Rancher rancher = new Rancher("wn");
+        //进入牧场
+        AnimalFarmScene scene = (AnimalFarmScene)new SceneBuilder("AnimalFarm", rancher).construct();
+        //查看牧场信息
+        scene.showAnimalFarm();
+        MaleRabbit rabbit = (MaleRabbit) new MaleFactory().createRabbit();
+        scene.raiseAnimal(rabbit);
+        scene.feedAnimal(rabbit,"ExcellentFodder");
+        scene.showAnimalFarm();
+        scene.harvestByProduct();
+        scene.harvestAnimal();
     }
 }
