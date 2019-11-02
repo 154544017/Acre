@@ -10,6 +10,10 @@ public class Context{
         this.strategy = strategy;
     }
 
+    public void setStrategy(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
     public void contextInterface(Plant plant) {
         strategy.strategyInterface(plant);
     }

@@ -1,5 +1,6 @@
 package Model.Scene;
 
+import Creation.Builder.SceneBuilder;
 import Model.Animal.Animal;
 import Model.Fodder.ExcellentFodder;
 import Model.Fodder.*;
@@ -14,15 +15,31 @@ import Model.Rancher;
 
 
 public class AnimalFarmScene extends Scene {
-    private Rancher rancher;
-    public AnimalFarmScene(){
-        System.out.println("牧场加载成功");
-    }
     private List<Animal> animalList=new ArrayList<>();
+
+
+    public AnimalFarmScene(SceneBuilder builder){
+        super(builder);
+        System.out.println("牧场加载成功");
+        System.out.println("玩家" + rancher.getUserName() + "进入牧场!");
+    }
 
     public List<Animal> getAnimalList() {
         return animalList;
     }
+
+    //缺少副产品信息
+    public void showAnimalFarm(){
+        if (animalList.isEmpty()){
+            System.out.println("牧场空空，赶紧养点小动物把!");
+            return;
+        }
+        for (Animal animal: animalList) {
+            animal.show();
+            //打印副产品信息
+        }
+    }
+
 
     public boolean feedAnimal(Animal a, String className) {
         if (!a.isNull()) {
@@ -48,8 +65,4 @@ public class AnimalFarmScene extends Scene {
         }
     }
 
-    @Override
-    public void setRancher(Rancher rancher) {
-        this.rancher = rancher;
-    }
 }

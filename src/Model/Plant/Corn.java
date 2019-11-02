@@ -22,10 +22,6 @@ public class Corn extends Plant {
         return false;
     }
 
-    @Override
-    public void show() {
-
-    }
 
     @Override
     public void setId() {

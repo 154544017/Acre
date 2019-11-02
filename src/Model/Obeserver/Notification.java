@@ -15,7 +15,7 @@ public class Notification implements Observer {
     @Override
     public void update(String name, String newState) {
         observerState = newState;
-        System.out.println(name + " changes its state: " + observerState);
+        System.out.println(this.getClass().getSimpleName() + ":" + "update:" + name + " changes its state: " + observerState);
     }
 
 }

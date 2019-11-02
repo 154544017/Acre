@@ -22,11 +22,6 @@ public class Pasture extends Plant {
     }
 
     @Override
-    public void show() {
-        System.out.println("我是"+ name + getId());
-    }
-
-    @Override
     public void setId() {
         this.id = count++;
     }

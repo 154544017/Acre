@@ -3,7 +3,7 @@ package Model.State;
 public class Maturation implements State {
     @Override
     public void react() {
-        System.out.println("React Maturation");
+        System.out.println(this.getClass().getName() + ":" + "react:" + "状态变为成熟期");
     }
 
     @Override
@@ -13,6 +13,6 @@ public class Maturation implements State {
 
     @Override
     public String toString() {
-        return "Maturation";
+        return "状态:成熟期";
     }
 }

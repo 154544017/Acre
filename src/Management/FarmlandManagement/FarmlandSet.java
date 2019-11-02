@@ -30,6 +30,18 @@ public class FarmlandSet  implements Container {
         }
     }
 
+    public void showAllFarmland(){
+        FarmlandIteratorAndProxy ite = getIterator();
+        while(true){
+            ite.current().show();
+            if(ite.hasNext()) {
+                ite.next();
+            }else{
+                break;
+            }
+        }
+    }
+
     public boolean plant(Plant plant){
         FarmlandIteratorAndProxy ite = getIterator();
         while(!ite.current().plantCrop(plant)){

@@ -45,7 +45,7 @@ public class CreationTest {
 
     @Test
     public void builderTest(){
-        PlantFarmScene scene1 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().buildOthers().build();
+//        PlantFarmScene scene1 = (PlantFarmScene) new SceneBuilder("PlantFarm").buildBackground().buildDecoration().buildOthers().build();
 //        PlantFarmScene scene2 = (PlantFarmScene) new SceneBuilder("Observer").buildBackground().buildDecoration().build();
 //        Rancher rancher = new Rancher("omf");
 //        scene2.setRancher(rancher);

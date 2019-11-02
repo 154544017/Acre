@@ -1,7 +1,10 @@
 package Main;
 
+import Model.Scene.Scene;
+
 public class Application {
     private static Application ourInstance = new Application();
+    private Scene farmScene;
 
     public static Application getInstance() {
         return ourInstance;
@@ -20,12 +23,11 @@ public class Application {
         System.out.println("Welcome to Acre Farm.");
         exit = false;
         while(!exit) {
-            // 获取输入,执行各种命令
-            //String command =
-            //execute(command)
 
         }
-
     }
 
+    public void switchScene(){
+
+    }
 }

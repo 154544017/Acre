@@ -3,19 +3,28 @@ package Creation.Builder;
 
 import Management.FarmlandManagement.FarmlandSet;
 import Model.Farmland;
+import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
 import Model.Scene.Scene;
 
 public class SceneBuilder {
-    private final String name;
-    private FarmlandSet set;
+    private String name;
+    public FarmlandSet set;
+    public Rancher rancher;
 
 
-    public SceneBuilder(String name){
+    public SceneBuilder(String name,Rancher rancher ){
+        this.rancher = rancher;
         this.name = name;
     }
 
+    public Scene construct(){
+        buildBackground();
+        buildDecoration();
+        buildOthers();
+        return build();
+    }
     public SceneBuilder buildBackground(){
         System.out.println("背景加载成功");
         return this;
@@ -28,7 +37,7 @@ public class SceneBuilder {
 
     public SceneBuilder buildOthers(){
         if (name.equals("PlantFarm")){
-            set = new FarmlandSet(20);
+            set = new FarmlandSet(2);
             System.out.println("土地加载完成");
         }else {
             System.out.println("窝棚加载成功");
@@ -37,6 +46,6 @@ public class SceneBuilder {
     }
 
     public Scene build(){
-        return name.equals("AnimalFarm") ? new AnimalFarmScene() : new PlantFarmScene(set);
+        return name.equals("AnimalFarm") ? new AnimalFarmScene(this) : new PlantFarmScene(this);
     }
 }

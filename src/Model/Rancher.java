@@ -8,6 +8,7 @@ public class Rancher extends Member {
     public  Rancher(String name){
         this.userName =name;
     }
+
     public void plant(FarmlandSet farmlandSet, Plant plant){
         farmlandSet.plant(plant);
     }
@@ -15,4 +16,6 @@ public class Rancher extends Member {
     public void harvest(FarmlandSet farmlandSet){
         farmlandSet.reapAllFarmland();
     }
+
+
 }

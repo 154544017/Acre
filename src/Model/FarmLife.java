@@ -25,7 +25,7 @@ public abstract class FarmLife implements Cloneable{
      */
     public void attach(Observer observer) {
         mObservers.add(observer);
-        System.out.println("Observer " + observer.getClass().getName() + " is attached to "
+        System.out.println("Observer " + observer.getClass().getSimpleName() + " is attached to "
                 + this.getSelf() + " successfully.");
     }
 
@@ -36,7 +36,7 @@ public abstract class FarmLife implements Cloneable{
      */
     public void detach(Observer observer) {
         mObservers.remove(observer);
-        System.out.println("Observer " + observer.getClass().getName() + " is detached to"
+        System.out.println("Observer " + observer.getClass().getSimpleName() + " is detached to"
                 + this.getSelf() + " successfully.");
     }
 
@@ -57,12 +57,14 @@ public abstract class FarmLife implements Cloneable{
         }else if(state.getClass() == Growth.class){
             this.setState(new Maturation());
         }else {
-            System.out.println(this.getSelf() + "已经可以收获了!");
+            System.out.println(this.getClass().getSimpleName() + ":" + "grow:" + this.getSelf() + "已经可以收获了!");
         }
     }
 
     public abstract boolean isNull();
-    public abstract void show();
+    public void show(){
+        System.out.println(this.getClass().getSimpleName()+ ":" + "show:"+ getSelf() + state.toString());
+    }
 
     public Object clone(){
         Object clone = null;

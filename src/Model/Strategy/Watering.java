@@ -11,7 +11,7 @@ public class Watering implements Strategy {
         if (plant.isNull()) {
             return;
         }
-        System.out.println(plant.getSelf() + " is being watered.");
+        System.out.println(this.getClass().getName() + ":" + "strategyInterface:" + plant.getSelf() + " is being watered.");
         plant.grow();
     }
 

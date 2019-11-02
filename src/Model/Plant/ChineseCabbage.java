@@ -20,10 +20,6 @@ public class ChineseCabbage extends Plant {
         return false;
     }
 
-    @Override
-    public void show() {
-        System.out.println("我是"+ name + getId());
-    }
 
     @Override
     public void setId() {

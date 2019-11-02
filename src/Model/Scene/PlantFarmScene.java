@@ -1,21 +1,17 @@
 package Model.Scene;
 
+import Creation.Builder.SceneBuilder;
 import Management.FarmlandManagement.FarmlandSet;
 import Model.Plant.Plant;
-import Model.Rancher;
 
 public class PlantFarmScene extends Scene {
     private FarmlandSet farmlandSet;
-    private Rancher rancher;
 
-    public PlantFarmScene(FarmlandSet set){
-        farmlandSet = set;
-        System.out.println("农场加载成功");
-    }
-
-    @Override
-    public void setRancher(Rancher rancher) {
-        this.rancher = rancher;
+    public PlantFarmScene(SceneBuilder builder){
+        super(builder);
+        farmlandSet = builder.set;
+        System.out.println("农场加载成功!");
+        System.out.println("玩家" + rancher.getUserName() + "进入农场!");
     }
 
     public void plant(Plant plant){
@@ -24,5 +20,9 @@ public class PlantFarmScene extends Scene {
 
     public void harvest(){
         rancher.harvest(farmlandSet);
+    }
+
+    public void showPlantFarm(){
+        farmlandSet.showAllFarmland();
     }
 }
