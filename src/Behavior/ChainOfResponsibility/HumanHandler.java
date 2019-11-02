@@ -1,6 +1,7 @@
 package Behavior.ChainOfResponsibility;
 
 import Model.Farmland;
+import Util.MyUtils;
 
 public class HumanHandler extends Handler {
 
@@ -11,6 +12,7 @@ public class HumanHandler extends Handler {
 
     @Override
     protected void handle(Farmland farmland) {
-        System.out.println("HumanHandler:Handler:土地" + farmland.landId + "为柔软土地，已由人力开垦！");
+        MyUtils.getModifierString(this,null,"handle");
+        System.out.println(farmland.landId + "为柔软土地，已由人力开垦！");
     }
 }

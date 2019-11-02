@@ -18,7 +18,7 @@ public class Hen extends Chicken {
 
     @Override
     public String getSelf() {
-        return null;
+        return name + id;
     }
 
     @Override
@@ -36,11 +36,6 @@ public class Hen extends Chicken {
     @Override
     public boolean isNull() {
         return false;
-    }
-
-    @Override
-    public void show() {
-        System.out.println("我是" + name + getId());
     }
 
 

@@ -5,6 +5,7 @@ import Model.Goods.Product;
 import Model.Rancher;
 import Model.Stock.Stock;
 import Structure.Composite.GoodsEnum;
+import Util.MyUtils;
 
 public class BuySaleOperation implements SaleOperation {
 
@@ -16,6 +17,7 @@ public class BuySaleOperation implements SaleOperation {
      */
     @Override
     public void peopleOperation(Rancher rancher, GoodsEnum thing, int number,String[] args) {
+        MyUtils.getModifierString(this,null,"peopleOperation");
         GoodsFactory goodsFactory = GoodsFactory.getInstance();
         Product product = goodsFactory.getGoods(thing);
         double price = product.price();

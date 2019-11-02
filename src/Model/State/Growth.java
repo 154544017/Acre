@@ -1,9 +1,12 @@
 package Model.State;
 
+import Util.MyUtils;
+
 public class Growth implements State{
     @Override
     public void react() {
-        System.out.println(this.getClass().getSimpleName() + ":" + "react:" + "状态变为生长期");
+        MyUtils.getModifierString(this,null,"react:");
+        System.out.println("状态变为生长期");
     }
 
     @Override

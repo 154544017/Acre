@@ -1,17 +1,18 @@
 package Model.Strategy;
 
 import Model.Plant.Plant;
+import Util.MyUtils;
 
 public class Watering implements Strategy {
 
     @Override
     public void strategyInterface(Plant plant) {
-//        System.out.println("Strategy land #" + farmLandNo + " is being watered.");
+        MyUtils.getModifierString(this, null,"strategyInterface");
         plant.show();
         if (plant.isNull()) {
             return;
         }
-        System.out.println(this.getClass().getName() + ":" + "strategyInterface:" + plant.getSelf() + " is being watered.");
+        System.out.println("给" + plant.getSelf() + "浇水");
         plant.grow();
     }
 

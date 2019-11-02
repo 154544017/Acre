@@ -1,5 +1,7 @@
 package Model.Obeserver;
 
+import Util.MyUtils;
+
 public class Notification implements Observer {
 
     /** State of the observer */
@@ -15,7 +17,8 @@ public class Notification implements Observer {
     @Override
     public void update(String name, String newState) {
         observerState = newState;
-        System.out.println(this.getClass().getSimpleName() + ":" + "update:" + name + " changes its state: " + observerState);
+        MyUtils.getModifierString(this,null,"update");
+        System.out.println(name + "改变状态为" + observerState);
     }
 
 }

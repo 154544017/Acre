@@ -5,6 +5,7 @@ import Model.State.Growth;
 import Model.State.Maturation;
 import Model.State.State;
 import Model.State.Youth;
+import Util.MyUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +25,9 @@ public abstract class FarmLife implements Cloneable{
      * @param observer the observer object to register
      */
     public void attach(Observer observer) {
+        MyUtils.getModifierString(this,getSelf(),"attach:");
         mObservers.add(observer);
-        System.out.println("Observer " + observer.getClass().getSimpleName() + " is attached to "
-                + this.getSelf() + " successfully.");
+        System.out.println("观察者成功绑定" + this.getSelf());
     }
 
     /**
@@ -35,9 +36,9 @@ public abstract class FarmLife implements Cloneable{
      * @param observer the observer object to detach
      */
     public void detach(Observer observer) {
+        MyUtils.getModifierString(this,getSelf(),"detach:");
         mObservers.remove(observer);
-        System.out.println("Observer " + observer.getClass().getSimpleName() + " is detached to"
-                + this.getSelf() + " successfully.");
+        System.out.println("观察者解除绑定" + this.getSelf() );
     }
 
     /**
@@ -52,18 +53,20 @@ public abstract class FarmLife implements Cloneable{
     }
 
     public void grow(){
+        MyUtils.getModifierString(this,getSelf(),"grow");
         if(state.getClass() == Youth.class){
             this.setState(new Growth());
         }else if(state.getClass() == Growth.class){
             this.setState(new Maturation());
         }else {
-            System.out.println(this.getClass().getSimpleName() + ":" + "grow:" + this.getSelf() + "已经可以收获了!");
+            System.out.println(this.getSelf() + "已经可以收获了!");
         }
     }
 
     public abstract boolean isNull();
     public void show(){
-        System.out.println(this.getClass().getSimpleName()+ ":" + "show:"+ getSelf() + state.toString());
+        MyUtils.getModifierString(this,getSelf(),"show:");
+        System.out.println(getSelf() + state.toString());
     }
 
     public Object clone(){

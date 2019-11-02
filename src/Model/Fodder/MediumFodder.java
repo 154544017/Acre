@@ -7,7 +7,7 @@ public class MediumFodder implements Fodder {
 
     @Override
     public void feed() {
-        System.out.println("be fed by MediumFodder");
+        System.out.println("被普通饲料喂养");
     }
 
     @Override

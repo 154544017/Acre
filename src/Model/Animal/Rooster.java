@@ -32,11 +32,6 @@ public class Rooster extends Chicken {
     }
 
     @Override
-    public void show() {
-        System.out.println("我是" + getSelf());
-    }
-
-    @Override
     public void setId() {
         this.id = count++;
     }

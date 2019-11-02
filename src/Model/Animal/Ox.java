@@ -31,11 +31,6 @@ public class Ox extends Cattle {
         return false;
     }
 
-    @Override
-    public void show() {
-        System.out.println("我是" + getSelf());
-    }
-
 
     @Override
     public void setId() {

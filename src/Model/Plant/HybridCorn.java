@@ -1,7 +1,7 @@
 package Model.Plant;
 
 public class HybridCorn implements ShowLikePotato {
-    Corn c=new Corn();
+    Corn c = new Corn();
 
     @Override
     public void showLikePotato() {

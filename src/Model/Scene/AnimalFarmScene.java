@@ -14,6 +14,8 @@ import Model.State.Youth;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Rancher;
+import Structure.Composite.GoodsEnum;
+import Util.MyUtils;
 
 
 public class AnimalFarmScene extends Scene {
@@ -23,6 +25,7 @@ public class AnimalFarmScene extends Scene {
 
     public AnimalFarmScene(SceneBuilder builder){
         super(builder);
+        MyUtils.getModifierString(this,null,"AnimalFarmScene");
         System.out.println("牧场加载成功");
         System.out.println("玩家" + rancher.getUserName() + "进入牧场!");
     }
@@ -33,36 +36,42 @@ public class AnimalFarmScene extends Scene {
 
     //缺少副产品信息
     public void showAnimalFarm(){
+        MyUtils.getModifierString(this,null,"showAnimalFarm");
+        if(byProductList.isEmpty()){
+            System.out.println("暂时还没有副产品哦");
+        }
         if (animalList.isEmpty()){
-            System.out.println("牧场空空，赶紧养点小动物把!");
+            System.out.println("牧场空空，赶紧养点小动物吧");
             return;
         }
         for (Animal animal: animalList) {
             animal.show();
+            System.out.println("位于" + animalList.indexOf(animal) + "号窝棚");
         }
         for(Product p: byProductList){
             System.out.println(p.getDescription());
         }
     }
 
-    public void raiseAnimal(Animal animal){
-        rancher.raise(this, animal);
+    public void raiseAnimal(GoodsEnum goodsEnum){
+        Animal animal = rancher.raise(goodsEnum);
         animal.attach(getNotification());
-        System.out.println(this.getClass().getSimpleName() + ":raiseAnimal:"+ "成功放养"+animal.getSelf());
+        animalList.add(animal);
     }
-    public void harvestByProduct(){
-        //放到包裹里还没写
-        for (Product product: byProductList) {
-            System.out.println(this.getClass().getSimpleName() + ":harvestByProduct: 收获" + product.getDescription());
 
-        }
-        byProductList.clear();
+    public void harvestByProduct(){
+        rancher.harvestByProduct(this);
+    }
+
+    public List<Product> getByProductList() {
+        return byProductList;
     }
 
     public void harvestAnimal(){
         rancher.harvestAnimal(this);
     }
-    public boolean feedAnimal(Animal a, String className) {
+    public boolean feedAnimal(int index, String className) {
+        Animal a = animalList.get(index);
         if (!a.isNull()) {
             a.show();
 

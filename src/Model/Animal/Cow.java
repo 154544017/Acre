@@ -5,6 +5,7 @@ import Model.Goods.Goods;
 import Model.Goods.Product;
 import Model.State.State;
 import Structure.Composite.GoodsEnum;
+import Util.MyUtils;
 
 public class Cow extends Cattle {
     private static String name = "Cow";
@@ -15,7 +16,7 @@ public class Cow extends Cattle {
 
     @Override
     public String getSelf() {
-        return null;
+        return name + id;
     }
 
     @Override
@@ -35,10 +36,6 @@ public class Cow extends Cattle {
         return false;
     }
 
-    @Override
-    public void show() {
-        System.out.println("我是" + name + getId());
-    }
 
     @Override
     public void setId() {

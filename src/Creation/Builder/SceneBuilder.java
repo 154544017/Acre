@@ -7,6 +7,7 @@ import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
 import Model.Scene.Scene;
+import Util.MyUtils;
 
 public class SceneBuilder {
     private String name;
@@ -26,16 +27,19 @@ public class SceneBuilder {
         return build();
     }
     public SceneBuilder buildBackground(){
+        MyUtils.getModifierString(this,null,"buildBackground");
         System.out.println("背景加载成功");
         return this;
     }
 
     public SceneBuilder buildDecoration(){
+        MyUtils.getModifierString(this,null,"buildDecoration");
         System.out.println("装饰加载成功");
         return this;
     }
 
     public SceneBuilder buildOthers(){
+        MyUtils.getModifierString(this,null,"buildOthers");
         if (name.equals("PlantFarm")){
             set = new FarmlandSet(2);
             System.out.println("土地加载完成");

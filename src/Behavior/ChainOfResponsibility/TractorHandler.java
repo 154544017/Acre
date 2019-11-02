@@ -1,6 +1,7 @@
 package Behavior.ChainOfResponsibility;
 
 import Model.Farmland;
+import Util.MyUtils;
 
 public class TractorHandler extends Handler {
     public TractorHandler(){
@@ -10,6 +11,7 @@ public class TractorHandler extends Handler {
 
     @Override
     protected void handle(Farmland farmland) {
-        System.out.println("TractorHandler:Handler:土地" + farmland.landId + "为坚硬土地，已由拖拉机开垦！");
+        MyUtils.getModifierString(this,null,"handle");
+        System.out.println(farmland.landId + "为坚硬土地，已由拖拉机开垦！");
     }
 }

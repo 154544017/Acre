@@ -7,7 +7,7 @@ public class ExcellentFodder implements Fodder {
 
     @Override
     public void feed() {
-        System.out.println("be fed by ExcellentFodder");
+        System.out.println("被优质饲料喂养");
     }
 
     @Override

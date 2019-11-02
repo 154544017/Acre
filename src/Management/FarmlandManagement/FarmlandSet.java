@@ -2,6 +2,7 @@ package Management.FarmlandManagement;
 
 import Model.Farmland;
 import Model.Plant.Plant;
+import Util.MyUtils;
 
 import java.util.Vector;
 
@@ -31,6 +32,7 @@ public class FarmlandSet  implements Container {
     }
 
     public void showAllFarmland(){
+        MyUtils.getModifierString(this,null,"showAllFarmland");
         FarmlandIteratorAndProxy ite = getIterator();
         while(true){
             ite.current().show();
@@ -40,6 +42,21 @@ public class FarmlandSet  implements Container {
                 break;
             }
         }
+    }
+
+    public Plant getPlantByLandId(int id){
+        FarmlandIteratorAndProxy ite = getIterator();
+        while(true){
+            if(ite.current().landId == id){
+                return ite.current().crop;
+            }
+            if(ite.hasNext()) {
+                ite.next();
+            }else{
+                break;
+            }
+        }
+        return null;
     }
 
     public boolean plant(Plant plant){

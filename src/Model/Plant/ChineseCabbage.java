@@ -26,8 +26,4 @@ public class ChineseCabbage extends Plant {
         this.id = count++;
     }
 
-    @Override
-    public void grow() {
-        System.out.println(name+ getId() + "正在生长");
-    }
 }

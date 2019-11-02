@@ -1,8 +1,14 @@
 package Model;
 
 import Behavior.ChainOfResponsibility.Handler;
+import Model.Plant.ChineseCabbage;
+import Model.Plant.Corn;
 import Model.Plant.Plant;
+import Model.Plant.Potato;
 import Model.State.Maturation;
+import Model.Stock.Stock;
+import Structure.Composite.GoodsEnum;
+import Util.MyUtils;
 
 public class Farmland {
     public static int SOFT = 1;
@@ -36,14 +42,29 @@ public class Farmland {
     }
 
     public void reapCrop(){
+        MyUtils.getModifierString(this,null,"reapCrop");
+        Stock stock = Stock.getInstance();
         if(isEmpty)
             return;
         if(crop.getState().getClass().equals(Maturation.class)){
             System.out.println(landId.toString() + "号农地收获作物:"+crop.getSelf());
+            addToStock(stock, crop);
             this.crop = null;
             this.isEmpty = true;
         }else{
             System.out.println(landId.toString() + "号农地作物"+crop.getSelf()+"尚未成熟");
+        }
+    }
+
+    private void addToStock(Stock stock, Plant crop) {
+        if(crop.getClass() == Corn.class){
+            stock.stockIn(GoodsEnum.CORN,1);
+        }else if(crop.getClass() == ChineseCabbage.class){
+            stock.stockIn(GoodsEnum.CABBAGE,1);
+        }else if(crop.getClass() == Potato.class){
+            stock.stockIn(GoodsEnum.PASTURE,1);
+        }else {
+            stock.stockIn(GoodsEnum.POTATO,1);
         }
     }
 
