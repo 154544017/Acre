@@ -2,6 +2,7 @@ package Model.Scene;
 
 import Creation.Builder.SceneBuilder;
 import Management.FarmlandManagement.FarmlandSet;
+import Model.Obeserver.Notification;
 import Model.Plant.Plant;
 
 public class PlantFarmScene extends Scene {
@@ -16,10 +17,12 @@ public class PlantFarmScene extends Scene {
 
     public void plant(Plant plant){
         rancher.plant(farmlandSet,plant);
+        plant.attach(getNotification());
     }
 
+
     public void harvest(){
-        rancher.harvest(farmlandSet);
+        rancher.harvestPlant(farmlandSet);
     }
 
     public void showPlantFarm(){

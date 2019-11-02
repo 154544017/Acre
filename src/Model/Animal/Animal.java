@@ -2,6 +2,7 @@ package Model.Animal;
 
 import Model.FarmLife;
 import Model.Fodder.Fodder;
+import Model.Goods.Product;
 import Model.State.State;
 
 public abstract class Animal extends FarmLife {
@@ -14,6 +15,8 @@ public abstract class Animal extends FarmLife {
         super(growthTime);
         this.feedAmount = feedAmount;
     }
+
+    public abstract Product getProduct();
 
     public abstract void eat();
 }

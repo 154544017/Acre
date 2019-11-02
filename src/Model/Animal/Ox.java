@@ -1,5 +1,6 @@
 package Model.Animal;
 
+import Model.Goods.Product;
 import Model.State.State;
 
 //公牛
@@ -13,6 +14,11 @@ public class Ox extends Cattle {
     @Override
     public String getSelf() {
         return name + id;
+    }
+
+    @Override
+    public Product getProduct() {
+        return null;
     }
 
     @Override

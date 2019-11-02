@@ -4,6 +4,8 @@ import Creation.Builder.SceneBuilder;
 import Model.Animal.Animal;
 import Model.Fodder.ExcellentFodder;
 import Model.Fodder.*;
+import Model.Goods.Goods;
+import Model.Goods.Product;
 import Model.State.Growth;
 import Model.State.Maturation;
 import Model.State.State;
@@ -16,6 +18,7 @@ import Model.Rancher;
 
 public class AnimalFarmScene extends Scene {
     private List<Animal> animalList=new ArrayList<>();
+    private List<Product> byProductList=new ArrayList<>();
 
 
     public AnimalFarmScene(SceneBuilder builder){
@@ -36,11 +39,29 @@ public class AnimalFarmScene extends Scene {
         }
         for (Animal animal: animalList) {
             animal.show();
-            //打印副产品信息
+        }
+        for(Product p: byProductList){
+            System.out.println(p.getDescription());
         }
     }
 
+    public void raiseAnimal(Animal animal){
+        rancher.raise(this, animal);
+        animal.attach(getNotification());
+        System.out.println(this.getClass().getSimpleName() + ":raiseAnimal:"+ "成功放养"+animal.getSelf());
+    }
+    public void harvestByProduct(){
+        //放到包裹里还没写
+        for (Product product: byProductList) {
+            System.out.println(this.getClass().getSimpleName() + ":harvestByProduct: 收获" + product.getDescription());
 
+        }
+        byProductList.clear();
+    }
+
+    public void harvestAnimal(){
+        rancher.harvestAnimal(this);
+    }
     public boolean feedAnimal(Animal a, String className) {
         if (!a.isNull()) {
             a.show();
@@ -57,6 +78,7 @@ public class AnimalFarmScene extends Scene {
                 a.setState(new Growth());
             } else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
                 a.setState(new Maturation());
+                byProductList.add(a.getProduct());
             }
             return true;
         } else {
