@@ -6,9 +6,17 @@ import Util.MyUtils;
 
 import java.util.Vector;
 
+/**
+ * 使用了迭代器模式
+ * 农地容器类，提供获得迭代器、一键收割作物、种植作物的方法
+ */
 public class FarmlandSet  implements Container {
     public Vector<Vector<Farmland>> landMap;
 
+    /**
+     * 构造函数
+     * @param size 容器中土地块的维度，size*size个Farmland
+     */
     public FarmlandSet(int size ){
         this.landMap =  new Vector<>(size);
         for(int i =0;i<size;i++){
@@ -23,6 +31,9 @@ public class FarmlandSet  implements Container {
         return new FarmlandIteratorAndProxy(landMap);
     }
 
+    /**
+     * 一键收割所有农地上的作物
+     */
     public void reapAllFarmland(){
         FarmlandIteratorAndProxy ite = getIterator();
         ite.current().reapCrop();
@@ -31,6 +42,9 @@ public class FarmlandSet  implements Container {
         }
     }
 
+    /**
+     * 显示所有农地的信息
+     */
     public void showAllFarmland(){
         MyUtils.getModifierString(this,null,"showAllFarmland");
         FarmlandIteratorAndProxy ite = getIterator();
@@ -59,6 +73,11 @@ public class FarmlandSet  implements Container {
         return null;
     }
 
+    /**
+     * 种植作物
+     * @param plant 作物实例
+     * @return 是否种植成功
+     */
     public boolean plant(Plant plant){
         FarmlandIteratorAndProxy ite = getIterator();
         while(!ite.current().plantCrop(plant)){

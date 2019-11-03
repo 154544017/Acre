@@ -4,6 +4,9 @@ import Management.ClubManagement.Member;
 import Structure.Composite.GoodsEnum;
 import Util.MyUtils;
 
+/**
+ * NPC类
+ */
 public class NPC extends Member {
     public NPC(String name){
         this.userName =name;

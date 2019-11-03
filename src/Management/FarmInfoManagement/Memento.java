@@ -1,5 +1,9 @@
 package Management.FarmInfoManagement;
 
+/**
+ * 使用了备忘录模式
+ * 备忘录类，记录了农场的名字、描述、农场主名的信息
+ */
 public class Memento {
     private String name;
     private  String description;
