@@ -1,5 +1,6 @@
 package Model.Plant;
 
+import Model.Scene.PlantFarmScene;
 import Model.State.State;
 import Model.State.Youth;
 
@@ -24,6 +25,10 @@ public class Pasture extends Plant {
     @Override
     public void setId() {
         this.id = count++;
+    }
+    public void buryIn(PlantFarmScene plantfarmscene){
+        System.out.println("一棵Pature被种下去了" );
+        attach(plantfarmscene.getNotification());
     }
 
 }
