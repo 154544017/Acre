@@ -59,7 +59,7 @@ public class ManagementTest {
 
     @Test
     public void clubMediumTest(){
-        FarmerClub farmerClub = new FarmerClub();
+        FarmerClub farmerClub = new FarmerClub("酷炫农场主俱乐部");
         NPC p1 = new NPC("小娜");
         NPC p2 = new NPC("小美");
         NPC p3 = new NPC("小刚");

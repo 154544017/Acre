@@ -5,7 +5,9 @@ import Creation.Builder.SceneBuilder;
 import Creation.FactoryMethod.ChineseCabbageFactory;
 import Creation.FactoryMethod.CornFactory;
 import Creation.FactoryMethod.PotatoFactory;
+import Management.ClubManagement.FarmerClub;
 import Model.Animal.MaleRabbit;
+import Model.NPC;
 import Model.Plant.ChineseCabbage;
 import Model.Plant.Corn;
 import Model.Plant.Potato;
@@ -74,6 +76,28 @@ public class GameTest {
         //出售玉米
         System.out.println(getInfo("出售玉米"));
         operationFacade.sell(GoodsEnum.CORN,1,new String[]{"0"});
+        //加入俱乐部
+        System.out.println(getInfo("加入俱乐部"));
+        FarmerClub farmerClub = new FarmerClub("酷炫农场主俱乐部");
+        NPC p1 = new NPC("小娜娜");
+        NPC p2 = new NPC("小美美");
+        NPC p3 = new NPC("小刚刚");
+        farmerClub.join(p1);
+        farmerClub.join(p2);
+        farmerClub.join(p3);
+        farmerClub.join(rancher);
+        farmerClub.show();
+        //给俱乐部成员赠送礼物
+        System.out.println(getInfo("赠送礼物"));
+        p1.sendGiftToAll(GoodsEnum.CABBAGE,3);
+        rancher.sendMessageToSomeone(p1,"谢谢"+p1.getUserName()+"的礼物");
+        //给俱乐部成员发送消息
+        System.out.println(getInfo("给俱乐部成员发送消息"));
+        rancher.sendMessageToAll("我的农场植物生长速度不够高，有什么提升技巧吗？");
+        p1.sendMessageToSomeone(rancher,"充钱吧！！");
+        p2.sendMessageToSomeone(rancher,"多加肥料！！");
+        p3.sendMessageToSomeone(rancher,"多浇水 ！！");
+
     }
 
     @Test

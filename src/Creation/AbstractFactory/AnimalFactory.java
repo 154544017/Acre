@@ -5,6 +5,10 @@ import Model.Plant.*;
 
 import java.util.HashMap;
 
+/**
+ * 使用了抽象工厂模式和原型模式
+ * AnimalFactory为工厂基类，拥有所有动物的原型
+ */
 public abstract class AnimalFactory {
     
     protected static HashMap<String, Animal> animalMap = new HashMap<String, Animal>(){

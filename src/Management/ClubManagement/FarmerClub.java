@@ -2,19 +2,31 @@ package Management.ClubManagement;
 
 import Model.Rancher;
 import Structure.Composite.GoodsEnum;
+import Util.MyUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FarmerClub implements Medium {
     List<Member> memberList;
-    public FarmerClub(){
+    public String name;
+    public FarmerClub(String name){
         memberList = new ArrayList<Member>();
+        this.name = name;
     }
     @Override
     public boolean join(Member member) {
+        for(Member m :memberList){
+            if(m.equals(member)){
+                MyUtils.getModifierString(this,null,"join");
+                System.out.println(member.getUserName()+"已经是俱乐部成员了！");
+               return false;
+            }
+        }
         memberList.add(member);
         member.setClub(this);
+        MyUtils.getModifierString(this,null,"join");
+        System.out.println(member.getUserName()+"成功加入"+name+"俱乐部！");
         return true;
     }
 
@@ -50,7 +62,17 @@ public class FarmerClub implements Medium {
         receiver.receiveGift(sender, gift,num);
     }
 
-    public int getClubMemberNum(){
+    public Integer getClubMemberNum(){
         return memberList.size();
+    }
+
+    public void show(){
+        MyUtils.getModifierString(this,null,"show");
+        System.out.println(name+"现已有"+getClubMemberNum().toString()+"位成员"+"他们是：");
+        String nameList = "";
+        for(Member member :memberList){
+            nameList += member.getUserName()+" ";
+        }
+        System.out.println(nameList);
     }
 }
