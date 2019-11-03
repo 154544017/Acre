@@ -11,6 +11,7 @@ import Model.Goods.GoodsEnum;
 import org.junit.Test;
 
 public class DecoratorTest {
+
     @Test
     public void DecoratorProduct(){
         GoodsFactory goodsFactory = GoodsFactory.getInstance();

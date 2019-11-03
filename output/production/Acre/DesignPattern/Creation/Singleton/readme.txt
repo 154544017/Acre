@@ -1,0 +1,1 @@
+单例模式应用广泛，如Application, FlyweightFactory等均用到单例模式，详情见文档。

@@ -1,9 +1,11 @@
 package Model.Goods;
 
 
+import Util.MyUtils;
+
 public class Goods extends Product {
 //    private String name;
-    private int price;
+    private double price;
 //    private int weight;
     private GoodsEnum goodsEnum;
 
@@ -12,13 +14,14 @@ public class Goods extends Product {
      * @param goodsEnum1
      */
     public Goods(GoodsEnum goodsEnum1) {
+        MyUtils.getModifierString(this,null,"Goods");
         this.goodsEnum = goodsEnum1;
         price = -1;
         description = goodsEnum1.toString();
         System.out.println("创建"+goodsEnum1);
     }
 
-    public void setPrice(int price1) {
+    public void setPrice(double price1) {
         price = price1;
     }
     public void show() {
