@@ -10,6 +10,9 @@ import Model.Stock.Stock;
 import Structure.Composite.GoodsEnum;
 import Util.MyUtils;
 
+/**
+ * 农地类，提供种植作物、收割作物等方法
+ */
 public class Farmland {
     public static int SOFT = 1;
     public static int MIXED = 2;
@@ -28,6 +31,11 @@ public class Farmland {
         chainOfHandler.selectHandler(hardness,this);
     }
 
+    /**
+     * 种植作物
+     * @param crop 作物实例
+     * @return 是否种植成功
+     */
     public boolean plantCrop(Plant crop){
         boolean isSuccess = true;
         if(isEmpty) {
@@ -41,6 +49,9 @@ public class Farmland {
         return isSuccess;
     }
 
+    /**
+     * 收割作物
+     */
     public void reapCrop(){
         MyUtils.getModifierString(this,null,"reapCrop");
         Stock stock = Stock.getInstance();

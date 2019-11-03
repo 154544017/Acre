@@ -125,11 +125,11 @@ public class GameTest {
         //查看牧场
         System.out.println(getInfo("查看牧场信息"));
         scene.showAnimalFarm();
-        //喂养兔子
+        //喂养兔子，实现桥接模式
         System.out.println(getInfo("喂养兔子:优质饲料"));
         scene.feedAnimal(0,"ExcellentFodder");
         scene.feedAnimal(0,"ExcellentFodder");
-        //喂养鸡
+        //喂养鸡，实现桥接模式
         System.out.println(getInfo("喂养鸡:普通饲料"));
         scene.feedAnimal(1,"MediumFodder");
         //查看牧场信息

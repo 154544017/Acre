@@ -35,7 +35,7 @@ public class ManagementTest {
 
     @Test
     public void farmInfoMementoTest(){
-        FarmInfoTaker infoTaker = new FarmInfoTaker();
+        FarmInfoTaker infoTaker = FarmInfoTaker.getFarmInfoTaker();
         FarmInfo farmInfo = new FarmInfo();
         farmInfo.setName("生态农场");
         farmInfo.setOwnerName("omf");
