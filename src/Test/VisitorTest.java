@@ -1,5 +1,6 @@
 package Test;
 
+import Creation.Builder.PlantFarmSceneBuilder;
 import Creation.Builder.SceneBuilder;
 import Creation.FactoryMethod.ChineseCabbageFactory;
 import Creation.FactoryMethod.CornFactory;
@@ -21,7 +22,7 @@ public class VisitorTest {
         //加载玩家信息
         Rancher rancher = new Rancher("fp");
         //建立种植物的地方
-        PlantFarmScene scene = (PlantFarmScene)new SceneBuilder("PlantFarm", rancher).construct();
+        PlantFarmScene scene = (PlantFarmScene)new PlantFarmSceneBuilder("PlantFarm", rancher).construct();
         //玉米->farmland
         Corn corn = (Corn) new CornFactory().createPlant();
         corn.buryIn(scene);

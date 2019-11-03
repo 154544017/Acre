@@ -1,16 +1,10 @@
 package Test;
 
 import Creation.AbstractFactory.MaleFactory;
-import Creation.Builder.SceneBuilder;
-import Creation.FactoryMethod.ChineseCabbageFactory;
-import Creation.FactoryMethod.CornFactory;
-import Creation.FactoryMethod.PotatoFactory;
+import Creation.Builder.AnimalFarmSceneBuilder;
+import Creation.Builder.PlantFarmSceneBuilder;
 import Management.ClubManagement.FarmerClub;
-import Model.Animal.MaleRabbit;
 import Model.NPC;
-import Model.Plant.ChineseCabbage;
-import Model.Plant.Corn;
-import Model.Plant.Potato;
 import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
@@ -20,19 +14,20 @@ import Model.Strategy.Watering;
 import Operation.OperationFacade;
 import Structure.Composite.GoodsEnum;
 import org.junit.Test;
+import static Util.MyUtils.getInfo;
 
 public class GameTest {
+    private Rancher rancher;
 
-    public static String getInfo(String s){
-        return String.format("%30s", s).replace(" ","-") + "---------------------------";
+    public GameTest(Rancher rancher) {
+        this.rancher = rancher;
     }
-    @Test
-    public void gameTest(){
+
+    public void PlantFarmTest(){
         //加载玩家信息
         System.out.println(getInfo("加载农场"));
-        Rancher rancher = new Rancher("wn");
         //进入农场
-        PlantFarmScene scene = (PlantFarmScene)new SceneBuilder("PlantFarm", rancher).construct();
+        PlantFarmScene scene = (PlantFarmScene)new PlantFarmSceneBuilder("PlantFarm", rancher).construct();
         //查看农场信息
         System.out.println(getInfo("查看农场信息"));
         scene.showPlantFarm();
@@ -40,7 +35,8 @@ public class GameTest {
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
         //买种子
-        System.out.println(getInfo("购入种子：玉米、土豆、白菜、杂交玉米种子， 如果所需钱不够，会提示购买失败"));
+        System.out.println(getInfo("购入种子：玉米、土豆、白菜、杂交玉米种子"));
+        System.out.println(getInfo("如果所需钱不够，会提示购买失败"));
         OperationFacade operationFacade = new OperationFacade(rancher);
         operationFacade.buy(GoodsEnum.CORN_SEED,10);
         operationFacade.buy(GoodsEnum.POTATO_SEED, 10);
@@ -50,7 +46,8 @@ public class GameTest {
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
         //种玉米、土豆、大白菜
-        System.out.println(getInfo("种植蔬菜：玉米、土豆、白菜、杂交玉米, 如果所需种子数量不够，会提示种植失败"));
+        System.out.println(getInfo("种植蔬菜：玉米、土豆、白菜、杂交玉米"));
+        System.out.println(getInfo("如果所需种子数量不够，会提示种植失败"));
         scene.plant(GoodsEnum.CORN_SEED);
         scene.plant(GoodsEnum.POTATO_SEED);
         scene.plant(GoodsEnum.CABBAGE_SEED);
@@ -100,13 +97,11 @@ public class GameTest {
 
     }
 
-    @Test
-    public void gameTest1(){
+    public void AnimalFarmTest(){
         //加载玩家信息
         System.out.println(getInfo("加载牧场"));
-        Rancher rancher = new Rancher("wn");
         //进入牧场
-        AnimalFarmScene scene = (AnimalFarmScene)new SceneBuilder("AnimalFarm", rancher).construct();
+        AnimalFarmScene scene = (AnimalFarmScene)new AnimalFarmSceneBuilder("AnimalFarm", rancher).construct();
         //查看背包
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();

@@ -1,4 +1,5 @@
 package Model.Scene;
+import Creation.Builder.PlantFarmSceneBuilder;
 import Creation.Builder.SceneBuilder;
 import Management.FarmlandManagement.FarmlandSet;
 import Model.Obeserver.Notification;
@@ -12,7 +13,7 @@ public class PlantFarmScene extends Scene implements PlantSettler {
 
     public PlantFarmScene(SceneBuilder builder){
         super(builder);
-        farmlandSet = builder.set;
+        farmlandSet = ((PlantFarmSceneBuilder)builder).set;
         MyUtils.getModifierString(this,null,"AnimalFarmScene");
         System.out.println("农场加载成功!");
         System.out.println("玩家" + rancher.getUserName() + "进入农场!");

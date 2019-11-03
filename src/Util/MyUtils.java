@@ -8,4 +8,7 @@ public class MyUtils {
         System.out.println(o.getClass().getSimpleName() + ":" + id + ":" + func + ":");
     }
 
+    public static String getInfo(String s){
+        return "\n" + String.format("%30s", s).replace(" ","-") + "---------------------------";
+    }
 }

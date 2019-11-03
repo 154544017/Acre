@@ -13,9 +13,8 @@ import Util.MyUtils;
  * 使用了建造者模式,模版方法模式
  * 将场景创建分为背景加载、装饰加载、其他加载，来分步完成场景的创建。
  */
-public class SceneBuilder {
+public abstract class SceneBuilder {
     private String name;
-    public FarmlandSet set;
     public Rancher rancher;
 
     /**
@@ -55,16 +54,7 @@ public class SceneBuilder {
      * 农场则加载土地，牧场则加载窝棚
      * @return SceneBuilder以便进行链式创建
      */
-    public SceneBuilder buildOthers(){
-        MyUtils.getModifierString(this,null,"buildOthers");
-        if (name.equals("PlantFarm")){
-            set = new FarmlandSet(2);
-            System.out.println("土地加载完成");
-        }else {
-            System.out.println("窝棚加载成功");
-        }
-        return this;
-    }
+    public abstract SceneBuilder buildOthers();
 
     /**
      * 通过SceneBuilder自己来创建场景

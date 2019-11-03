@@ -10,5 +10,4 @@ public abstract class Plant extends FarmLife implements SceneVisitor {
         super(growthTime);
     }
 
-
 }
