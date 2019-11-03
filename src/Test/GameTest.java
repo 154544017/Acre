@@ -1,5 +1,7 @@
 package Test;
 
+import Behavior.Interpreter.Instruction;
+import Behavior.Interpreter.Interpreter;
 import Creation.AbstractFactory.MaleFactory;
 import Creation.Builder.AnimalFarmSceneBuilder;
 import Creation.Builder.PlantFarmSceneBuilder;
@@ -73,6 +75,10 @@ public class GameTest {
         //出售玉米
         System.out.println(getInfo("出售玉米"));
         operationFacade.sell(GoodsEnum.CORN,1,new String[]{"0"});
+        //查看背包中玉米数量,指令格式为"Select GoodsEnum.toString()"
+        Instruction selectCorn = new Instruction("Select Corn");
+        Interpreter interpreter = new Interpreter();
+        interpreter.interpret(selectCorn);
         //加入俱乐部
         System.out.println(getInfo("加入俱乐部"));
         FarmerClub farmerClub = new FarmerClub("酷炫农场主俱乐部");
@@ -141,6 +147,10 @@ public class GameTest {
         //一键收取成熟的动物
         System.out.println(getInfo("收取动物"));
         scene.harvestAnimal();
+        //查看背包中兔子数量,指令格式为"Select GoodsEnum.toString()"
+        Instruction selectRabbit = new Instruction("Select Rabbit");
+        Interpreter interpreter = new Interpreter();
+        interpreter.interpret(selectRabbit);
         //查看仓库
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
