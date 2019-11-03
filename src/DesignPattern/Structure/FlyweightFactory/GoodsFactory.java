@@ -13,29 +13,29 @@ public class GoodsFactory {
         return ourInstance;
     }
 
-    private static Hashtable<GoodsEnum,Integer> priceTable = new Hashtable<GoodsEnum,Integer>() {
+    private static Hashtable<GoodsEnum,Double> priceTable = new Hashtable<GoodsEnum,Double>() {
 
         {
-            put(GoodsEnum.CABBAGE,4);
-            put(GoodsEnum.CABBAGE_SEED,1);
-            put(GoodsEnum.HYBRIDCORN_SEED,2);
-            put(GoodsEnum.HYBRIDCORN,5);
-            put(GoodsEnum.CHICKEN,6);
-            put(GoodsEnum.CHICKEN_CUB,2);
-            put(GoodsEnum.CATTLE,10);
-            put(GoodsEnum.CATTLE_CUB,4);
-            put(GoodsEnum.CORN,5);
-            put(GoodsEnum.CORN_SEED,2);
-            put(GoodsEnum.EGG,2);
-            put(GoodsEnum.MILK,2);
-            put(GoodsEnum.PASTURE,5);
-            put(GoodsEnum.PASTURE_SEED,2);
-            put(GoodsEnum.POTATO,5);
-            put(GoodsEnum.POTATO_SEED,2);
-            put(GoodsEnum.RABBIT,8);
-            put(GoodsEnum.RABBIT_CUB,3);
-            put(GoodsEnum.RABBIT_HAIR,2);
-            put(GoodsEnum.BEEF,55);
+            put(GoodsEnum.CABBAGE,0.45);
+            put(GoodsEnum.CABBAGE_SEED,0.04);
+            put(GoodsEnum.HYBRIDCORN_SEED,0.05);
+            put(GoodsEnum.HYBRIDCORN,0.9);
+            put(GoodsEnum.CHICKEN,100.0);
+            put(GoodsEnum.CHICKEN_CUB,25.0);
+            put(GoodsEnum.CATTLE,2000.0);
+            put(GoodsEnum.CATTLE_CUB,200.0);
+            put(GoodsEnum.CORN,0.8);
+            put(GoodsEnum.CORN_SEED,0.1);
+            put(GoodsEnum.EGG,0.8);
+            put(GoodsEnum.MILK,4.5);
+            put(GoodsEnum.PASTURE,0.7);
+            put(GoodsEnum.PASTURE_SEED,0.03);
+            put(GoodsEnum.POTATO,1.2);
+            put(GoodsEnum.POTATO_SEED,0.05);
+            put(GoodsEnum.RABBIT,78.0);
+            put(GoodsEnum.RABBIT_CUB,14.0);
+            put(GoodsEnum.RABBIT_HAIR,25.5);
+            put(GoodsEnum.BEEF,55.0);
         }
     };
     private Hashtable pool = new Hashtable<GoodsEnum, Goods>();
