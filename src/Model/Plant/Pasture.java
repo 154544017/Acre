@@ -1,7 +1,6 @@
 package Model.Plant;
 
-import Model.State.State;
-import Model.State.Youth;
+import Model.Scene.PlantFarmScene;
 
 public class Pasture extends Plant {
     private static String name = "Pasture";
@@ -25,9 +24,9 @@ public class Pasture extends Plant {
     public void setId() {
         this.id = count++;
     }
-
-    @Override
-    public void grow() {
-        System.out.println(name + getId() + "正在生长");
+    public void buryIn(PlantFarmScene plantfarmscene){
+        System.out.println("一棵Pature被种下去了" );
+        attach(plantfarmscene.getNotification());
     }
+
 }

@@ -1,16 +1,16 @@
 package Test;
 
-import Creation.FactoryMethod.PlantFactory;
-import Creation.FactoryMethod.PotatoFactory;
-import Management.ClubManagement.FarmerClub;
-import Management.FarmInfoManagement.FarmInfoTaker;
-import Management.FarmlandManagement.FarmlandIteratorAndProxy;
-import Management.FarmlandManagement.FarmlandSet;
+import DesignPattern.Creation.FactoryMethod.PlantFactory;
+import DesignPattern.Creation.FactoryMethod.PotatoFactory;
+import DesignPattern.Behavior.Medium.ClubManagement.FarmerClub;
+import DesignPattern.Behavior.Memento.FarmInfoManagement.FarmInfoTaker;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandIteratorAndProxy;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandSet;
 import Model.FarmInfo;
-import Model.NPC;
+import DesignPattern.Behavior.Medium.NPC;
 import Model.Plant.Plant;
 import Model.Rancher;
-import Structure.Composite.GoodsEnum;
+import Model.Goods.GoodsEnum;
 import org.junit.Test;
 
 public class ManagementTest {
@@ -35,7 +35,7 @@ public class ManagementTest {
 
     @Test
     public void farmInfoMementoTest(){
-        FarmInfoTaker infoTaker = new FarmInfoTaker();
+        FarmInfoTaker infoTaker = FarmInfoTaker.getFarmInfoTaker();
         FarmInfo farmInfo = new FarmInfo();
         farmInfo.setName("生态农场");
         farmInfo.setOwnerName("omf");
@@ -59,7 +59,7 @@ public class ManagementTest {
 
     @Test
     public void clubMediumTest(){
-        FarmerClub farmerClub = new FarmerClub();
+        FarmerClub farmerClub = new FarmerClub("酷炫农场主俱乐部");
         NPC p1 = new NPC("小娜");
         NPC p2 = new NPC("小美");
         NPC p3 = new NPC("小刚");

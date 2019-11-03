@@ -1,20 +1,14 @@
 package Test;
 
-import Creation.AbstractFactory.AnimalFactory;
-import Creation.AbstractFactory.FemaleFactory;
-import Creation.AbstractFactory.MaleFactory;
-import Creation.Builder.SceneBuilder;
-import Creation.FactoryMethod.*;
+import DesignPattern.Creation.AbstractFactory.AnimalFactory;
+import DesignPattern.Creation.AbstractFactory.FemaleFactory;
+import DesignPattern.Creation.AbstractFactory.MaleFactory;
+import DesignPattern.Creation.FactoryMethod.*;
 
-import Creation.FlyweightFactory.GoodsFactory;
+import DesignPattern.Structure.FlyweightFactory.GoodsFactory;
 import Model.Goods.Goods;
-import Model.NullLife.NullLife;
 import Model.Plant.Plant;
-import Model.Plant.Potato;
-import Model.Rancher;
-import Model.Scene.AnimalFarmScene;
-import Model.Scene.PlantFarmScene;
-import Structure.Composite.GoodsEnum;
+import Model.Goods.GoodsEnum;
 import org.junit.Test;
 
 public class CreationTest {
@@ -57,7 +51,7 @@ public class CreationTest {
 
     //    @Test
 //    public void NullLifeTest(){
-//        NullLife phantom =new NullLife();
+//        DesignPattern.NullLife phantom =new DesignPattern.NullLife();
 //        phantom.show();
 //        phantom.setId();
 //        System.out.println(phantom.isNull());

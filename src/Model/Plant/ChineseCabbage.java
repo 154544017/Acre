@@ -1,6 +1,7 @@
 package Model.Plant;
 
 
+import Model.Scene.PlantFarmScene;
 
 public class ChineseCabbage extends Plant {
     private static String name = "ChineseCabbage";
@@ -12,7 +13,7 @@ public class ChineseCabbage extends Plant {
 
     @Override
     public String getSelf() {
-        return name + count;
+        return name + id;
     }
 
     @Override
@@ -25,9 +26,10 @@ public class ChineseCabbage extends Plant {
     public void setId() {
         this.id = count++;
     }
-
     @Override
-    public void grow() {
-        System.out.println(name+ getId() + "正在生长");
+    public void buryIn(PlantFarmScene plantfarmscene){
+        System.out.println("一棵大白菜被种下去了" );
+        attach(plantfarmscene.getNotification());
     }
+
 }

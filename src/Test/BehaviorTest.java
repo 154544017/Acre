@@ -1,13 +1,13 @@
 package Test;
 
-import Behavior.ChainOfResponsibility.Handler;
-import Behavior.Command.CommandInvoker;
+import DesignPattern.Behavior.ChainOfResponsibility.Handler;
+import DesignPattern.Behavior.Command.CommandInvoker;
 import Model.Farmland;
-import Structure.Composite.GoodsEnum;
-import Behavior.Command.StockIn;
-import Behavior.Command.StockOut;
-import Behavior.Interpreter.Instruction;
-import Behavior.Interpreter.Interpreter;
+import Model.Goods.GoodsEnum;
+import DesignPattern.Behavior.Command.StockIn;
+import DesignPattern.Behavior.Command.StockOut;
+import DesignPattern.Behavior.Interpreter.Instruction;
+import DesignPattern.Behavior.Interpreter.Interpreter;
 import org.junit.Test;
 
 public class BehaviorTest {

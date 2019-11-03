@@ -1,13 +1,14 @@
 package Test;
 
-import Creation.FlyweightFactory.GoodsFactory;
-import Model.Goods.*;
+import DesignPattern.Structure.Decorator.BoxingDecorator;
+import DesignPattern.Structure.Decorator.ProcessDecorator;
+import DesignPattern.Structure.Decorator.WholesaleDecorator;
+import Model.Goods.Product;
+import DesignPattern.Structure.FlyweightFactory.GoodsFactory;
 import Model.Rancher;
-import Operation.OperationFacade;
-import Structure.Composite.GoodsEnum;
+import DesignPattern.Structure.Facade.Operation.OperationFacade;
+import Model.Goods.GoodsEnum;
 import org.junit.Test;
-
-import java.util.List;
 
 public class DecoratorTest {
     @Test

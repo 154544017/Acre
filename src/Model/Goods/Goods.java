@@ -1,9 +1,6 @@
 package Model.Goods;
 
 
-import Structure.Composite.GoodsEnum;
-
-
 public class Goods extends Product {
 //    private String name;
     private double price;
@@ -15,7 +12,7 @@ public class Goods extends Product {
      * @param goodsEnum1
      */
     public Goods(GoodsEnum goodsEnum1) {
-        goodsEnum = goodsEnum1;
+        this.goodsEnum = goodsEnum1;
         price = -1;
         description = goodsEnum1.toString();
         System.out.println("创建"+goodsEnum1);
@@ -29,7 +26,9 @@ public class Goods extends Product {
         System.out.println("价格为"+price);
     }
 
-
+    public GoodsEnum getGoodsEnum() {
+        return goodsEnum;
+    }
 
     @Override
     public double price() {

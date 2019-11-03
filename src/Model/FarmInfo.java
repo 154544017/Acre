@@ -1,6 +1,6 @@
 package Model;
 
-import Management.FarmInfoManagement.Memento;
+import DesignPattern.Behavior.Memento.FarmInfoManagement.Memento;
 
 public class FarmInfo {
     public String name;

@@ -1,7 +1,6 @@
 package Model.Animal;
 
 import Model.Goods.Product;
-import Model.State.State;
 
 //公鸡
 public class Rooster extends Chicken {
@@ -29,11 +28,6 @@ public class Rooster extends Chicken {
     @Override
     public boolean isNull() {
         return false;
-    }
-
-    @Override
-    public void show() {
-        System.out.println("我是" + getSelf());
     }
 
     @Override

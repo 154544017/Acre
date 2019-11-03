@@ -1,8 +1,6 @@
 package Model.Plant;
 
-import Model.State.Maturation;
-import Model.State.State;
-import Model.State.Youth;
+import Model.Scene.PlantFarmScene;
 
 public class Corn extends Plant {
     private static String name = "Corn";
@@ -17,6 +15,16 @@ public class Corn extends Plant {
         return name + id;
     }
 
+    /**
+     * 适配器模式中被适配的方法
+     * @param name
+     * @param id
+     * @return String
+     */
+    public String getSelf(String name,int id) {
+        return name + id;
+    }
+
     @Override
     public boolean isNull() {
         return false;
@@ -26,6 +34,11 @@ public class Corn extends Plant {
     @Override
     public void setId() {
         this.id = count++;
+    }
+
+    public void buryIn(PlantFarmScene plantfarmscene){
+        System.out.println("一棵玉米被种下去了" );
+        attach(plantfarmscene.getNotification());
     }
 
 }

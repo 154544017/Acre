@@ -1,6 +1,6 @@
 package Model.Plant;
 
-import Model.State.Youth;
+import Model.Scene.PlantFarmScene;
 
 public class Potato extends Plant {
     private static String name = "Potato";
@@ -24,6 +24,11 @@ public class Potato extends Plant {
     @Override
     public void setId() {
         this.id = count++;
+    }
+
+    public void buryIn(PlantFarmScene plantfarmscene){
+        System.out.println("一个土豆被种下去了" );
+        attach(plantfarmscene.getNotification());
     }
 
 }

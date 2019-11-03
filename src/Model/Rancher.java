@@ -1,18 +1,25 @@
 package Model;
 
-import Management.ClubManagement.Member;
-import Management.FarmlandManagement.FarmlandSet;
+import DesignPattern.Creation.AbstractFactory.AnimalFactory;
+import DesignPattern.Creation.AbstractFactory.FemaleFactory;
+import DesignPattern.Creation.AbstractFactory.MaleFactory;
+import DesignPattern.Creation.FactoryMethod.PlantFactoryImpl;
+import DesignPattern.Behavior.Medium.ClubManagement.Member;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandSet;
 import Model.Animal.Animal;
+import Model.Animal.Cattle;
+import Model.Animal.Rabbit;
+import Model.Goods.Goods;
+import Model.Goods.GoodsEnum;
+import Model.Goods.Product;
 import Model.Plant.Plant;
-import Model.Stock.Stock;
-
-import Structure.Composite.GoodsEnum;
-
 import Model.Scene.AnimalFarmScene;
-import Model.State.Maturation;
+import DesignPattern.Behavior.State.Maturation;
+import DesignPattern.Structure.Composite.Stock.Stock;
+import Util.MyUtils;
 
 import java.util.List;
-
+import java.util.Random;
 
 
 public class Rancher extends Member {
@@ -24,8 +31,17 @@ public class Rancher extends Member {
         stock = Stock.getInstance();
     }
 
-    public void plant(FarmlandSet farmlandSet, Plant plant){
-        farmlandSet.plant(plant);
+    public Plant plant(FarmlandSet farmlandSet, GoodsEnum goodsEnum){
+        if (stock.stockOut(goodsEnum,1)){
+            PlantFactoryImpl factory = PlantFactoryImpl.getInstance();
+            Plant plant = factory.setPlantFactory(goodsEnum).createPlant();
+            farmlandSet.plant(plant);
+            return plant;
+        }else {
+            MyUtils.getModifierString(this,null,"plant");
+            System.out.println("种植失败");
+            return null;
+        }
     }
 
     public void harvestPlant(FarmlandSet farmlandSet){
@@ -66,21 +82,64 @@ public class Rancher extends Member {
     public void harvestAnimal(AnimalFarmScene scene){
         boolean flag = false;
         List<Animal> animalList = scene.getAnimalList();
+        MyUtils.getModifierString(this,null,"harvestAnimal");
         for (int i = animalList.size() - 1; i >= 0 ; i--) {
-            if(animalList.get(i).getState().getClass() == Maturation.class){
+            Animal animal = animalList.get(i);
+            if(animal.getState().getClass() == Maturation.class){
                 flag = true;
-                System.out.println(this.getClass().getSimpleName() + ":harvestAnimal: 收获动物"+ animalList.get(i).getSelf());
+                System.out.println("收获动物" + animal.getSelf());
+                if(animal instanceof Rabbit){
+                    stock.stockIn(GoodsEnum.RABBIT,1);
+                }else if(animal instanceof Cattle){
+                    stock.stockIn(GoodsEnum.CATTLE,1);
+                }else {
+                    stock.stockIn(GoodsEnum.CHICKEN,1);
+                }
                 animalList.remove(i);
             }
         }
         if(!flag){
-            System.out.println(this.getClass().getSimpleName() + ":harvestAnimal: 牧场内没有可收获的动物");
+            System.out.println("牧场内没有可收获的动物");
         }
     }
 
+    public void harvestByProduct(AnimalFarmScene scene){
+        MyUtils.getModifierString(this,null,"harvestByProduct");
+        for (Product product: scene.getByProductList()) {
+            System.out.println("收获" + product.getDescription());
+            stock.stockIn(((Goods)product).getGoodsEnum(),1);
+        }
+        scene.getByProductList().clear();
+    }
 
-    public void raise(AnimalFarmScene scene, Animal animal){
-        scene.getAnimalList().add(animal);
+    public void showStock(){
+        stock.showStock();
+    }
+
+    public Animal raise(GoodsEnum goodsEnum){
+        Random random = new Random();
+        if (stock.stockOut(goodsEnum,1)){
+            AnimalFactory factory;
+            if(random.nextInt(2) % 2 == 0){
+                factory = new MaleFactory();
+            }else {
+                factory = new FemaleFactory();
+            }
+            Animal animal;
+            if(goodsEnum == GoodsEnum.RABBIT_CUB){
+                animal = factory.createRabbit();
+            }else if(goodsEnum == GoodsEnum.CATTLE_CUB){
+                animal = factory.createCattle();
+            }else {
+                animal = factory.createChicken();
+            }
+            System.out.println("成功饲养" + animal.getSelf());
+            return animal;
+        }else {
+            MyUtils.getModifierString(this,null,"raise");
+            System.out.println("饲养失败");
+            return null;
+        }
     }
 
     public Stock getStock(){
