@@ -10,13 +10,16 @@ import Util.MyUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 动植物基类
+ */
 public abstract class FarmLife implements Cloneable{
 
     protected int id;
     protected State state;
     protected int growthTime;
 
-    /** Preserve the registered observers */
+    /** 维护该动物的观察者 */
     private List<Observer> mObservers = new ArrayList<>();
 
     /**

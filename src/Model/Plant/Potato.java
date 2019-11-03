@@ -28,7 +28,7 @@ public class Potato extends Plant {
     }
 
     public void buryIn(PlantFarmScene plantfarmscene){
-        System.out.println("一棵大白菜被种下去了" );
+        System.out.println("一个土豆被种下去了" );
         attach(plantfarmscene.getNotification());
     }
 
