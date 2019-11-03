@@ -39,10 +39,10 @@ public class GameTest {
         System.out.println(getInfo("购入种子：玉米、土豆、白菜、杂交玉米种子"));
         System.out.println(getInfo("如果所需钱不够，会提示购买失败"));
         OperationFacade operationFacade = new OperationFacade(rancher);
-        operationFacade.buy(GoodsEnum.CORN_SEED,10);
-        operationFacade.buy(GoodsEnum.POTATO_SEED, 10);
-        operationFacade.buy(GoodsEnum.CABBAGE_SEED,50);
-        operationFacade.buy(GoodsEnum.HYBRIDCORN_SEED,10);
+        operationFacade.buy(GoodsEnum.CORN_SEED,4);
+        operationFacade.buy(GoodsEnum.POTATO_SEED, 5);
+        operationFacade.buy(GoodsEnum.CABBAGE_SEED,3);
+        operationFacade.buy(GoodsEnum.HYBRIDCORN_SEED,2);
         //查看背包
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
@@ -116,8 +116,8 @@ public class GameTest {
         //购买动物幼崽
         System.out.println(getInfo("购入幼崽：兔子、牛、鸡幼崽"));
         OperationFacade operationFacade = new OperationFacade(rancher);
-        operationFacade.buy(GoodsEnum.RABBIT_CUB,10);
-        operationFacade.buy(GoodsEnum.CATTLE_CUB, 10);
+        operationFacade.buy(GoodsEnum.RABBIT_CUB,3);
+        operationFacade.buy(GoodsEnum.CATTLE_CUB, 2);
         operationFacade.buy(GoodsEnum.CHICKEN_CUB,5);
         //查看仓库
         System.out.println(getInfo("查看仓库"));
