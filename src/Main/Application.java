@@ -20,7 +20,7 @@ public class Application {
     }
 
     public void run() {
-        System.out.println("Welcome to Acre Farm.");
+        System.out.println("欢迎来到一亩三分地");
         exit = false;
         while(!exit) {
 
