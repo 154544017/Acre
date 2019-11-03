@@ -18,6 +18,16 @@ public class Corn extends Plant {
         return name + id;
     }
 
+    /**
+     * 适配器模式中被适配的方法
+     * @param name
+     * @param id
+     * @return String
+     */
+    public String getSelf(String name,int id) {
+        return name + id;
+    }
+
     @Override
     public boolean isNull() {
         return false;
