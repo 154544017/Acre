@@ -1,7 +1,6 @@
 package Model.Plant;
 
 import Model.Scene.PlantFarmScene;
-import Model.State.Youth;
 
 public class Potato extends Plant {
     private static String name = "Potato";

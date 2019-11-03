@@ -1,9 +1,6 @@
 package Model.Plant;
 
 import Model.Scene.PlantFarmScene;
-import Model.State.Maturation;
-import Model.State.State;
-import Model.State.Youth;
 
 public class Corn extends Plant {
     private static String name = "Corn";

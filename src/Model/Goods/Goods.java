@@ -1,9 +1,6 @@
 package Model.Goods;
 
 
-import Structure.Composite.GoodsEnum;
-
-
 public class Goods extends Product {
 //    private String name;
     private int price;

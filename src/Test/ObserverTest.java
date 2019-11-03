@@ -1,15 +1,11 @@
 package Test;
 
-import Creation.AbstractFactory.AnimalFactory;
-import Creation.AbstractFactory.MaleFactory;
-import Creation.FactoryMethod.CornFactory;
-import Creation.FactoryMethod.PlantFactory;
-import Creation.FactoryMethod.PotatoFactory;
+import DesignPattern.Creation.AbstractFactory.AnimalFactory;
+import DesignPattern.Creation.AbstractFactory.MaleFactory;
+import DesignPattern.Creation.FactoryMethod.PlantFactory;
+import DesignPattern.Creation.FactoryMethod.PotatoFactory;
 import Model.Animal.Animal;
-import Model.Obeserver.Notification;
-import Model.Obeserver.Observer;
-import Model.Plant.Corn;
-import Model.Plant.Plant;
+import DesignPattern.Behavior.Obeserver.Notification;
 import Model.Plant.Potato;
 import org.junit.Test;
 

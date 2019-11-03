@@ -1,10 +1,10 @@
 package Model;
 
-import Model.Obeserver.Observer;
-import Model.State.Growth;
-import Model.State.Maturation;
-import Model.State.State;
-import Model.State.Youth;
+import DesignPattern.Behavior.Obeserver.Observer;
+import DesignPattern.Behavior.State.Growth;
+import DesignPattern.Behavior.State.Maturation;
+import DesignPattern.Behavior.State.State;
+import DesignPattern.Behavior.State.Youth;
 import Util.MyUtils;
 
 import java.util.ArrayList;

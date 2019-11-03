@@ -1,11 +1,10 @@
 package Test;
 
-import Creation.FactoryMethod.PlantFactory;
-import Creation.FactoryMethod.PotatoFactory;
+import DesignPattern.Creation.FactoryMethod.PotatoFactory;
 import Model.Plant.Plant;
-import Model.Strategy.ApplyFertilizer;
-import Model.Strategy.Context;
-import Model.Strategy.Watering;
+import DesignPattern.Behavior.Strategy.ApplyFertilizer;
+import DesignPattern.Behavior.Strategy.Context;
+import DesignPattern.Behavior.Strategy.Watering;
 import org.junit.Test;
 
 

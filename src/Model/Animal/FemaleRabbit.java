@@ -1,9 +1,5 @@
 package Model.Animal;
 
-import Model.Goods.Goods;
-import Model.Goods.Product;
-import Structure.Composite.GoodsEnum;
-
 public class FemaleRabbit extends Rabbit {
     private static String name = "FemaleRabbit";
     private static int count = 0;

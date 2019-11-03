@@ -1,9 +1,8 @@
 package Model.Animal;
 
 import Model.FarmLife;
-import Model.Fodder.Fodder;
+import DesignPattern.Structure.Bridge.Fodder.Fodder;
 import Model.Goods.Product;
-import Model.State.State;
 
 /**
  * 实现桥接模式

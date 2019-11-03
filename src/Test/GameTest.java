@@ -1,21 +1,20 @@
 package Test;
 
-import Behavior.Interpreter.Instruction;
-import Behavior.Interpreter.Interpreter;
-import Creation.AbstractFactory.MaleFactory;
-import Creation.Builder.AnimalFarmSceneBuilder;
-import Creation.Builder.PlantFarmSceneBuilder;
-import Management.ClubManagement.FarmerClub;
-import Model.NPC;
+import DesignPattern.Behavior.Interpreter.Instruction;
+import DesignPattern.Behavior.Interpreter.Interpreter;
+import DesignPattern.Creation.Builder.AnimalFarmSceneBuilder;
+import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;
+import DesignPattern.Behavior.Medium.ClubManagement.FarmerClub;
+import DesignPattern.Behavior.Medium.NPC;
 import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
-import Model.Strategy.ApplyFertilizer;
-import Model.Strategy.Context;
-import Model.Strategy.Watering;
-import Operation.OperationFacade;
-import Structure.Composite.GoodsEnum;
-import org.junit.Test;
+import DesignPattern.Behavior.Strategy.ApplyFertilizer;
+import DesignPattern.Behavior.Strategy.Context;
+import DesignPattern.Behavior.Strategy.Watering;
+import DesignPattern.Structure.Facade.Operation.OperationFacade;
+import Model.Goods.GoodsEnum;
+
 import static Util.MyUtils.getInfo;
 
 public class GameTest {
