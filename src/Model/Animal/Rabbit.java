@@ -1,10 +1,9 @@
 package Model.Animal;
 
-import Creation.FlyweightFactory.GoodsFactory;
+import DesignPattern.Structure.FlyweightFactory.GoodsFactory;
 import Model.Goods.Goods;
 import Model.Goods.Product;
-import Model.State.State;
-import Structure.Composite.GoodsEnum;
+import Model.Goods.GoodsEnum;
 
 public abstract class Rabbit extends Animal{
 

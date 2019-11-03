@@ -1,13 +1,13 @@
 package Model;
 
-import Behavior.ChainOfResponsibility.Handler;
+import DesignPattern.Behavior.ChainOfResponsibility.Handler;
+import Model.Goods.GoodsEnum;
 import Model.Plant.ChineseCabbage;
 import Model.Plant.Corn;
 import Model.Plant.Plant;
 import Model.Plant.Potato;
-import Model.State.Maturation;
-import Model.Stock.Stock;
-import Structure.Composite.GoodsEnum;
+import DesignPattern.Behavior.State.Maturation;
+import DesignPattern.Structure.Composite.Stock.Stock;
 import Util.MyUtils;
 
 /**

@@ -1,8 +1,7 @@
 package Model.Plant;
 
 import Model.FarmLife;
-import Model.Fodder.*;
-import Model.Visitor.SceneVisitor;
+import DesignPattern.Behavior.Visitor.SceneVisitor;
 
 public abstract class Plant extends FarmLife implements SceneVisitor {
 

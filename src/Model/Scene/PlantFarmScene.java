@@ -1,11 +1,10 @@
 package Model.Scene;
-import Creation.Builder.PlantFarmSceneBuilder;
-import Creation.Builder.SceneBuilder;
-import Management.FarmlandManagement.FarmlandSet;
-import Model.Obeserver.Notification;
+import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;
+import DesignPattern.Creation.Builder.SceneBuilder;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandSet;
 import Model.Plant.Plant;
-import Model.Visitor.PlantSettler;
-import Structure.Composite.GoodsEnum;
+import DesignPattern.Behavior.Visitor.PlantSettler;
+import Model.Goods.GoodsEnum;
 import Util.MyUtils;
 
 public class PlantFarmScene extends Scene implements PlantSettler {

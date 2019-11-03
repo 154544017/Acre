@@ -1,21 +1,18 @@
 package Model.Scene;
 
-import Behavior.Command.StockOut;
-import Creation.Builder.SceneBuilder;
+import DesignPattern.Creation.Builder.SceneBuilder;
 import Model.Animal.Animal;
-import Model.Fodder.ExcellentFodder;
-import Model.Fodder.*;
-import Model.Goods.Goods;
+import DesignPattern.Structure.Bridge.Fodder.ExcellentFodder;
+import DesignPattern.Structure.Bridge.Fodder.*;
 import Model.Goods.Product;
-import Model.State.Growth;
-import Model.State.Maturation;
-import Model.State.State;
-import Model.State.Youth;
+import DesignPattern.Behavior.State.Growth;
+import DesignPattern.Behavior.State.Maturation;
+import DesignPattern.Behavior.State.Youth;
 
 import java.util.ArrayList;
 import java.util.List;
-import Model.Rancher;
-import Structure.Composite.GoodsEnum;
+
+import Model.Goods.GoodsEnum;
 import Util.MyUtils;
 
 

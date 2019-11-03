@@ -1,22 +1,21 @@
 package Model;
 
-import Creation.AbstractFactory.AnimalFactory;
-import Creation.AbstractFactory.FemaleFactory;
-import Creation.AbstractFactory.MaleFactory;
-import Creation.FactoryMethod.PlantFactoryImpl;
-import Management.ClubManagement.Member;
-import Management.FarmlandManagement.FarmlandSet;
+import DesignPattern.Creation.AbstractFactory.AnimalFactory;
+import DesignPattern.Creation.AbstractFactory.FemaleFactory;
+import DesignPattern.Creation.AbstractFactory.MaleFactory;
+import DesignPattern.Creation.FactoryMethod.PlantFactoryImpl;
+import DesignPattern.Behavior.Medium.ClubManagement.Member;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandSet;
 import Model.Animal.Animal;
 import Model.Animal.Cattle;
 import Model.Animal.Rabbit;
 import Model.Goods.Goods;
+import Model.Goods.GoodsEnum;
 import Model.Goods.Product;
-import Model.Plant.HybridCorn;
 import Model.Plant.Plant;
 import Model.Scene.AnimalFarmScene;
-import Model.State.Maturation;
-import Model.Stock.Stock;
-import Structure.Composite.GoodsEnum;
+import DesignPattern.Behavior.State.Maturation;
+import DesignPattern.Structure.Composite.Stock.Stock;
 import Util.MyUtils;
 
 import java.util.List;

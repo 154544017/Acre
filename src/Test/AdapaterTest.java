@@ -1,5 +1,5 @@
 package Test;
-import Model.Plant.HybridCorn;
+import DesignPattern.Structure.Adapter.HybridCorn;
 import org.junit.Test;
 public class AdapaterTest {
     @Test

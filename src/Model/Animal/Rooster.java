@@ -1,7 +1,6 @@
 package Model.Animal;
 
 import Model.Goods.Product;
-import Model.State.State;
 
 //公鸡
 public class Rooster extends Chicken {

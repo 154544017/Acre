@@ -1,11 +1,10 @@
 package Test;
 
-import Creation.Builder.PlantFarmSceneBuilder;
-import Creation.Builder.SceneBuilder;
-import Creation.FactoryMethod.ChineseCabbageFactory;
-import Creation.FactoryMethod.CornFactory;
-import Creation.FactoryMethod.PastureFactory;
-import Creation.FactoryMethod.PotatoFactory;
+import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;
+import DesignPattern.Creation.FactoryMethod.ChineseCabbageFactory;
+import DesignPattern.Creation.FactoryMethod.CornFactory;
+import DesignPattern.Creation.FactoryMethod.PastureFactory;
+import DesignPattern.Creation.FactoryMethod.PotatoFactory;
 import Model.Plant.ChineseCabbage;
 import Model.Plant.Corn;
 import Model.Plant.Pasture;
@@ -13,7 +12,7 @@ import Model.Plant.Potato;
 import Model.Rancher;
 import Model.Scene.PlantFarmScene;
 
-import Structure.Composite.GoodsEnum;
+import Model.Goods.GoodsEnum;
 import org.junit.Test;
 
 public class VisitorTest {

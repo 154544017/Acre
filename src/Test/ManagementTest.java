@@ -1,16 +1,16 @@
 package Test;
 
-import Creation.FactoryMethod.PlantFactory;
-import Creation.FactoryMethod.PotatoFactory;
-import Management.ClubManagement.FarmerClub;
-import Management.FarmInfoManagement.FarmInfoTaker;
-import Management.FarmlandManagement.FarmlandIteratorAndProxy;
-import Management.FarmlandManagement.FarmlandSet;
+import DesignPattern.Creation.FactoryMethod.PlantFactory;
+import DesignPattern.Creation.FactoryMethod.PotatoFactory;
+import DesignPattern.Behavior.Medium.ClubManagement.FarmerClub;
+import DesignPattern.Behavior.Memento.FarmInfoManagement.FarmInfoTaker;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandIteratorAndProxy;
+import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandSet;
 import Model.FarmInfo;
-import Model.NPC;
+import DesignPattern.Behavior.Medium.NPC;
 import Model.Plant.Plant;
 import Model.Rancher;
-import Structure.Composite.GoodsEnum;
+import Model.Goods.GoodsEnum;
 import org.junit.Test;
 
 public class ManagementTest {

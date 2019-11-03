@@ -1,7 +1,7 @@
 package Model.Scene;
 
-import Creation.Builder.SceneBuilder;
-import Model.Obeserver.Notification;
+import DesignPattern.Creation.Builder.SceneBuilder;
+import DesignPattern.Behavior.Obeserver.Notification;
 import Model.Rancher;
 
 public abstract class Scene {
