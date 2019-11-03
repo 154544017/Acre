@@ -18,9 +18,9 @@ public class Stock {
     /**
      * 子背包，实现组合模式
      */
-    private List<Stock> subStock;
+    private List<Object> subStock;
 
-    public List<Stock> getSubStock() {
+    public List<Object> getSubStock() {
         return subStock;
     }
 
@@ -29,7 +29,7 @@ public class Stock {
      * 构造方法
      * 初始化物品的数量
      */
-    private Stock(){
+    public Stock(){
         stockMap = new HashMap<>();
         subStock = new ArrayList<>();
         for(GoodsEnum goodsEnum : GoodsEnum.values()){

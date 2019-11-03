@@ -20,5 +20,9 @@ public class MediumFodder implements Fodder {
     public int getNum() {
         return 1;
     }
+
+    public String toString(){
+        return "MediumFodder";
+    }
 }
 

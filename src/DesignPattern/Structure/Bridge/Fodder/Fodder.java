@@ -6,4 +6,5 @@ package DesignPattern.Structure.Bridge.Fodder;
 public interface Fodder {
     void feed();
     int getNum();
+    String toString();
 }

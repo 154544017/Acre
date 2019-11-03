@@ -20,5 +20,8 @@ public class ExcellentFodder implements Fodder {
     public int getNum() {
         return 2;
     }
+    public String toString(){
+        return "ExcellentFodder";
+    }
 
 }
