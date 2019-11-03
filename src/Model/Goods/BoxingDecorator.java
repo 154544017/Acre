@@ -1,7 +1,7 @@
 package Model.Goods;
 
 public class BoxingDecorator extends ProcessDecorator {
-    Product product;
+    private Product product;
 
     public BoxingDecorator(Product product){
         this.product = product;

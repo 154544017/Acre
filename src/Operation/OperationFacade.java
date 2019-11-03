@@ -6,7 +6,6 @@ import Structure.Composite.GoodsEnum;
 public class OperationFacade {
     private SaleOperation buySaleOperation;
     private SaleOperation sellSaleOperation;
-    private SaleOperation plantSaleOperation;
     private Rancher rancher;
 
     public OperationFacade(Rancher rancher){

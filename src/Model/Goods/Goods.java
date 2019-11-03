@@ -6,7 +6,7 @@ import Structure.Composite.GoodsEnum;
 
 public class Goods extends Product {
 //    private String name;
-    private int price;
+    private double price;
 //    private int weight;
     private GoodsEnum goodsEnum;
 
@@ -21,7 +21,7 @@ public class Goods extends Product {
         System.out.println("创建"+goodsEnum1);
     }
 
-    public void setPrice(int price1) {
+    public void setPrice(double price1) {
         price = price1;
     }
     public void show() {
