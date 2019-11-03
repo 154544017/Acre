@@ -26,6 +26,7 @@ public class Stock {
         return subStock;
     }
 
+
     /**
      * 构造方法
      * 初始化物品的数量

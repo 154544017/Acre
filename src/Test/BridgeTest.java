@@ -10,13 +10,13 @@ import Model.Fodder.MediumFodder;
 import Model.Plant.Plant;
 import Model.Scene.AnimalFarmScene;
 import org.junit.Test;
-public class BridgeTest {
-    @Test
-    public void bridgeTest(){
-//        AnimalFarmScene a=new AnimalFarmScene();
+//public class BridgeTest {
+////    @Test
+////    public void bridgeTest(){
+//        AnimalFarmScene animalFarmScene=new AnimalFarmScene();
 //        AnimalFactory factory1 = new MaleFactory();
 //
 //        Animal cow=factory1.createCattle();
-//        a.feedAnimal(cow,"MediumFodder");
-    }
-}
+//        animalFarmScene.feedAnimal(cow.getId(),"MediumFodder");
+////    }
+//}
