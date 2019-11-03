@@ -11,6 +11,7 @@ import Model.Animal.Cattle;
 import Model.Animal.Rabbit;
 import Model.Goods.Goods;
 import Model.Goods.Product;
+import Model.Plant.HybridCorn;
 import Model.Plant.Plant;
 import Model.Scene.AnimalFarmScene;
 import Model.State.Maturation;

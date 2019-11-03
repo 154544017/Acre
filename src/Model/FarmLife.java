@@ -58,6 +58,7 @@ public abstract class FarmLife implements Cloneable{
             this.setState(new Growth());
         }else if(state.getClass() == Growth.class){
             this.setState(new Maturation());
+            System.out.println(this.getSelf() + "已经可以收获了!");
         }else {
             System.out.println(this.getSelf() + "已经可以收获了!");
         }

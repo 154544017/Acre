@@ -38,21 +38,23 @@ public class GameTest {
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
         //买种子
-        System.out.println(getInfo("购入种子：玉米、土豆、白菜种子"));
+        System.out.println(getInfo("购入种子：玉米、土豆、白菜、杂交玉米种子， 如果所需钱不够，会提示购买失败"));
         OperationFacade operationFacade = new OperationFacade(rancher);
         operationFacade.buy(GoodsEnum.CORN_SEED,10);
         operationFacade.buy(GoodsEnum.POTATO_SEED, 10);
-        operationFacade.buy(GoodsEnum.CABBAGE_SEED,5);
+        operationFacade.buy(GoodsEnum.CABBAGE_SEED,50);
+        operationFacade.buy(GoodsEnum.HYBRIDCORN_SEED,10);
         //查看背包
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
         //种玉米、土豆、大白菜
-        System.out.println(getInfo("种植蔬菜：玉米、土豆、白菜"));
+        System.out.println(getInfo("种植蔬菜：玉米、土豆、白菜、杂交玉米, 如果所需种子数量不够，会提示种植失败"));
         scene.plant(GoodsEnum.CORN_SEED);
         scene.plant(GoodsEnum.POTATO_SEED);
         scene.plant(GoodsEnum.CABBAGE_SEED);
+        scene.plant(GoodsEnum.HYBRIDCORN_SEED);
         scene.showPlantFarm();
-        //给玉米浇水，土豆施肥
+        //给玉米浇水，土豆施肥（给成熟的浇水）
         System.out.println(getInfo("给0号土地的植物浇水"));
         Context context = new Context(new Watering());
         context.contextInterface(scene.getPlantByLandId(0));
@@ -106,6 +108,7 @@ public class GameTest {
         scene.showAnimalFarm();
         //喂养兔子
         System.out.println(getInfo("喂养兔子:优质饲料"));
+        scene.feedAnimal(0,"ExcellentFodder");
         scene.feedAnimal(0,"ExcellentFodder");
         //喂养鸡
         System.out.println(getInfo("喂养鸡:普通饲料"));

@@ -12,6 +12,7 @@ public abstract class PlantFactory {
             put("Pasture", new Pasture());
             put("Corn", new Corn());
             put("Potato", new Potato());
+            put("HybridCorn", new HybridCorn());
         }
     };
     public abstract Plant createPlant();

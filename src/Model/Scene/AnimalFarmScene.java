@@ -1,5 +1,6 @@
 package Model.Scene;
 
+import Behavior.Command.StockOut;
 import Creation.Builder.SceneBuilder;
 import Model.Animal.Animal;
 import Model.Fodder.ExcellentFodder;
@@ -85,8 +86,13 @@ public class AnimalFarmScene extends Scene {
                 a.setState(new Youth());
             } else if (a.getState().getNum() + a.fodder.getNum() == 2) {
                 a.setState(new Growth());
-            } else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
+            }
+            else if(a.getState().getNum()==3){
+                System.out.println(a.getSelf()+"已经成熟了");
+            }
+            else if (a.getState().getNum() + a.fodder.getNum() >= 3) {
                 a.setState(new Maturation());
+                System.out.println(a.getSelf()+"已经成熟了");
                 byProductList.add(a.getProduct());
             }
             return true;

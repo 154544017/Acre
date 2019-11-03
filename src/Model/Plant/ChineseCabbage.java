@@ -12,7 +12,7 @@ public class ChineseCabbage extends Plant {
 
     @Override
     public String getSelf() {
-        return name + count;
+        return name + id;
     }
 
     @Override

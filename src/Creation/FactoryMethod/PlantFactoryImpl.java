@@ -1,6 +1,7 @@
 package Creation.FactoryMethod;
 
 import Creation.FlyweightFactory.GoodsFactory;
+import Model.Plant.HybridCorn;
 import Model.Plant.Plant;
 import Structure.Composite.GoodsEnum;
 
@@ -25,6 +26,10 @@ public class PlantFactoryImpl {
             plantFactory = new PotatoFactory();
         }else if(goodsEnum == GoodsEnum.PASTURE_SEED){
             plantFactory = new PastureFactory();
+        }
+        else if(goodsEnum == GoodsEnum.HYBRIDCORN_SEED){
+            plantFactory = new HybridCornFactory();
+
         }
         return this;
     }

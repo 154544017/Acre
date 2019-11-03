@@ -18,6 +18,8 @@ public class GoodsFactory {
         {
             put(GoodsEnum.CABBAGE,4);
             put(GoodsEnum.CABBAGE_SEED,1);
+            put(GoodsEnum.HYBRIDCORN_SEED,2);
+            put(GoodsEnum.HYBRIDCORN,5);
             put(GoodsEnum.CHICKEN,6);
             put(GoodsEnum.CHICKEN_CUB,2);
             put(GoodsEnum.CATTLE,10);
