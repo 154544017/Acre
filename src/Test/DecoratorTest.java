@@ -5,15 +5,19 @@ import DesignPattern.Structure.Decorator.ProcessDecorator;
 import DesignPattern.Structure.Decorator.WholesaleDecorator;
 import Model.Goods.Product;
 import DesignPattern.Structure.FlyweightFactory.GoodsFactory;
-import Model.Rancher;
-import DesignPattern.Structure.Facade.Operation.OperationFacade;
 import Model.Goods.GoodsEnum;
-import org.junit.Test;
+import Util.MyUtils;
+
 
 public class DecoratorTest {
 
-    @Test
-    public void DecoratorProduct(){
+    public static void main(String[] args){
+        System.out.println(MyUtils.getInfo("装饰器模式测试"));
+        DecoratorProduct();
+        System.out.println(MyUtils.getInfo("装饰器模式测试成功"));
+    }
+
+    public static void DecoratorProduct(){
         GoodsFactory goodsFactory = GoodsFactory.getInstance();
 
         Product beef = goodsFactory.getGoods(GoodsEnum.BEEF);
@@ -80,18 +84,6 @@ public class DecoratorTest {
 
     }
 
-    @Test
-    public void testSaleOperation(){
-        Rancher rancher = new Rancher("ppp");
-        OperationFacade operationFacade = new OperationFacade(rancher);
-        operationFacade.buy(GoodsEnum.CABBAGE_SEED,10);
-        operationFacade.sell(GoodsEnum.CABBAGE_SEED,1,null);
-        operationFacade.sell(GoodsEnum.CABBAGE_SEED,2, new String[]{"0"});
-        operationFacade.sell(GoodsEnum.CABBAGE_SEED,2,new String[]{"1"});
-        operationFacade.sell(GoodsEnum.CABBAGE_SEED,5,new String[]{"1","0","-1"});
-        operationFacade.sell(GoodsEnum.CABBAGE_SEED,1,null);
-
-    }
 
 
 }

@@ -12,14 +12,23 @@ import Util.MyUtils;
 
 import java.util.*;
 
+/**
+ *  使用了外观模式
+ *  该类实现了高层接口类，为复杂的出售操作提供了一个简易的接口
+ */
 public class SellSaleOperation implements SaleOperation {
 
     /**
      *
-     * @param rancher
-     * @param thing
-     * @param number
-     * @param args
+     * @param rancher Rancher类, 代表使用该操作的农场主
+     * @param thing GoodsEnum枚举类，代表需要操作的对象
+     * @param number int类型，代表数量
+     * @param args String[]，可变参数，在某些接口有用，在某些接口被掩蔽。在该类中，该变量被使用。
+     *             ["0"] 代表对原产品进行包装(价格会变动)
+     *             ["1"] 代表将原产品以批发价出售
+     *             ["0","1"],["1","0"],["1","0","-1","2"] 均代表将原产品先包装再以批发价出售。
+     *                      仅"0","1"具有实际意义。"-1","2"等会被忽略。
+     *             null 或者 [] 会被视为不进行任何处理。
      */
     @Override
     public void peopleOperation(Rancher rancher, GoodsEnum thing, int number,String[] args) {
