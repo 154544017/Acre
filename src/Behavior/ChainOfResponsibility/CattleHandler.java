@@ -23,6 +23,6 @@ public class CattleHandler extends Handler {
     @Override
     protected void handle(Farmland farmland) {
         MyUtils.getModifierString(this,null,"handle");
-        System.out.println(farmland.landId + "为混合土地，已由耕牛开垦！");
+        System.out.println("土地" + farmland.landId + "为混合土地，已由耕牛开垦！");
     }
 }

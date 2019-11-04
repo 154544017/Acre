@@ -13,10 +13,7 @@ import org.junit.Test;
 public class BehaviorTest {
     @Test
     public void ChainOfResponsibilityTest(){
-        Handler chainOfHandler = Handler.getChainOfHandler();
-        chainOfHandler.selectHandler(Handler.SOFT, new Farmland());
-        chainOfHandler.selectHandler(Handler.MIXED, new Farmland());
-        chainOfHandler.selectHandler(Handler.HARD, new Farmland());
+        Farmland farmland = new Farmland();
     }
 
     @Test

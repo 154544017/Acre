@@ -23,7 +23,7 @@ public class Farmland {
     public Farmland(){
         this.isEmpty =true;
         this.landId = count++;
-        this.hardness = HARDNESSTYPE[(int)(0+Math.random()*(2-1+1))];
+        this.hardness = HARDNESSTYPE[(int)(0+Math.random()*3)];
         Handler chainOfHandler = Handler.getChainOfHandler();
         chainOfHandler.selectHandler(hardness,this);
     }
