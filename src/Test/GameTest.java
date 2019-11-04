@@ -2,6 +2,7 @@ package Test;
 
 import DesignPattern.Behavior.Interpreter.Instruction;
 import DesignPattern.Behavior.Interpreter.Interpreter;
+import DesignPattern.Behavior.Visitor.OptimizationVisitor;
 import DesignPattern.Creation.Builder.AnimalFarmSceneBuilder;
 import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;
 import DesignPattern.Behavior.Medium.ClubManagement.FarmerClub;
@@ -62,6 +63,12 @@ public class GameTest {
         System.out.println(getInfo("给0，1号土地的植物施肥"));
         context.contextInterface(scene.getPlantByLandId(1));
         context.contextInterface(scene.getPlantByLandId(0));
+        //用优化访问者来访问玉米，土豆，大白菜，来优化种植
+        System.out.println(getInfo("通过访问者来优化种植操作"));
+        OptimizationVisitor visitor = new OptimizationVisitor();
+        scene.getPlantByLandId(0).accept(visitor);
+        scene.getPlantByLandId(1).accept(visitor);
+        scene.getPlantByLandId(2).accept(visitor);
         //查看现在的种植状况
         System.out.println(getInfo("查看土地种植状况"));
         scene.showPlantFarm();

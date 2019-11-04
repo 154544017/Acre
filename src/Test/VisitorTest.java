@@ -1,5 +1,6 @@
 package Test;
 
+import DesignPattern.Behavior.Visitor.OptimizationVisitor;
 import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;
 import DesignPattern.Creation.FactoryMethod.ChineseCabbageFactory;
 import DesignPattern.Creation.FactoryMethod.CornFactory;
@@ -20,28 +21,20 @@ public class VisitorTest {
     public static void main(String[] args) {
         //加载玩家信息
         System.out.println(MyUtils.getInfo("访问者模式测试"));
-        //System.out.println(MyUtils.getInfo("accept接收buryIn方法"));
-        Rancher rancher = new Rancher("fp");
-        //建立种植物的地方
-        PlantFarmScene scene = (PlantFarmScene)new PlantFarmSceneBuilder("PlantFarm", rancher).construct();
-        //玉米->farmland
+        //创建访问者，为了简化测试，创建了OptimizationVisitor
+        OptimizationVisitor visitor = new OptimizationVisitor();
+        //玉米->Visitor
         Corn corn = (Corn) new CornFactory().createPlant();
-        corn.buryIn(scene);
-        scene.accept(corn);
-        //白菜->farmland
+        corn.accept(visitor);
+        //白菜->Visitor
         ChineseCabbage cabbage =(ChineseCabbage) new ChineseCabbageFactory().createPlant();
-        cabbage.buryIn(scene);
-        scene.accept(cabbage);
-        //pasture->farmland
+        cabbage.accept(visitor);
+        //牧草->Visitor
         Pasture pasture =(Pasture) new PastureFactory().createPlant();
-        pasture.buryIn(scene);
-        scene.accept(pasture);
-        //土豆->farmland
+        pasture.accept(visitor);
+        //土豆->Visitor
         Potato potato = (Potato) new PotatoFactory().createPlant();
-        potato.buryIn(scene);
-        scene.accept(potato);
-        //用访问者模式种这些,发现库存不足
-        scene.plant(GoodsEnum.PASTURE_SEED);
+        potato.accept(visitor);
         System.out.println(MyUtils.getInfo("访问者模式测试成功"));
     }
 
