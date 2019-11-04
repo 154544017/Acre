@@ -16,9 +16,10 @@ import Model.Goods.GoodsEnum;
 import org.junit.Test;
 
 public class VisitorTest {
-    @Test
-    public void visitorTest(){
+    public static void main(String[] args) {
         //加载玩家信息
+        System.out.println(MyUtils.getInfo("访问者模式测试"));
+        System.out.println(MyUtils.getInfo('accept 接收buryIn方法,实现访问对象不同操作不同'));
         Rancher rancher = new Rancher("fp");
         //建立种植物的地方
         PlantFarmScene scene = (PlantFarmScene)new PlantFarmSceneBuilder("PlantFarm", rancher).construct();
@@ -40,7 +41,7 @@ public class VisitorTest {
         scene.accept(potato);
         //用访问者模式种这些,发现库存不足
         scene.plant(GoodsEnum.PASTURE_SEED);
-
+        System.out.println(MyUtils.getInfo("访问者模式测试成功"));
     }
 
 }
