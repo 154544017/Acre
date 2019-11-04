@@ -1,5 +1,7 @@
 package DesignPattern.Behavior.Memento.FarmInfoManagement;
 
+import Util.MyUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +33,8 @@ public class FarmInfoTaker {
      */
     public void add(Memento info){
         mementoList.add(info);
+        MyUtils.getModifierString(this,null,"add");
+        System.out.println("当前农场信息存档成功！");
     }
 
 
@@ -43,11 +47,14 @@ public class FarmInfoTaker {
      * @return 农场信息存档
      */
     public Memento backToLastInfo(){
+        MyUtils.getModifierString(this,null,"backToLastInfo");
         if(mementoList.size()!=0) {
             Memento memento = mementoList.get(mementoList.size() - 1);
             mementoList.remove(mementoList.size() - 1);
+            System.out.println("成功取出上一个存档的农场信息！");
             return memento;
         }else{
+            System.out.println("农场信息存档为空！");
             return null;
         }
     }

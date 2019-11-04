@@ -2,10 +2,12 @@ package Test;
 
 import DesignPattern.Behavior.Interpreter.Instruction;
 import DesignPattern.Behavior.Interpreter.Interpreter;
+import DesignPattern.Behavior.Memento.FarmInfoManagement.FarmInfoTaker;
 import DesignPattern.Creation.Builder.AnimalFarmSceneBuilder;
 import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;
 import DesignPattern.Behavior.Medium.ClubManagement.FarmerClub;
 import DesignPattern.Behavior.Medium.NPC;
+import Model.FarmInfo;
 import Model.Rancher;
 import Model.Scene.AnimalFarmScene;
 import Model.Scene.PlantFarmScene;
@@ -32,6 +34,14 @@ public class GameTest {
         //查看农场信息
         System.out.println(getInfo("查看农场信息"));
         scene.showPlantFarm();
+        FarmInfoTaker infoTaker = FarmInfoTaker.getFarmInfoTaker();
+        FarmInfo farmInfo = new FarmInfo();
+        farmInfo.setName("生态农场");
+        farmInfo.setOwnerName("wxn");
+        farmInfo.setDescription("我们的生态农场是运用生态学的观点和手段，以“农场”作为农业生态系统的一个整体，并把贯穿于整个系统中的各种生物群体，包括植物、动物、微生物之间，以及生物与非生物环境间的能量转化和物质循环联系起来，对环境—生物系统进行科学合理的组合，以达到获得最大生物产量和维护生态平衡");
+        System.out.println("当前农场信息状态：");
+        farmInfo.showInfo();
+        infoTaker.add(farmInfo.saveInfoToMemento());
         //查看背包
         System.out.println(getInfo("查看仓库"));
         rancher.showStock();
@@ -98,7 +108,7 @@ public class GameTest {
         rancher.sendMessageToAll("我的农场植物生长速度不够高，有什么提升技巧吗？");
         p1.sendMessageToSomeone(rancher,"充钱吧！！");
         p2.sendMessageToSomeone(rancher,"多加肥料！！");
-        p3.sendMessageToSomeone(rancher,"多浇水 ！！");
+
 
     }
 
