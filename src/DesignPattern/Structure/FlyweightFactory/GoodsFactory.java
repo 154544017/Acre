@@ -6,9 +6,18 @@ import Model.Goods.GoodsEnum;
 
 import java.util.Hashtable;
 
+/**
+ * 使用了享元模式，单例模式
+ * 管理货物Goods的创建
+ */
 public class GoodsFactory {
     private GoodsFactory(){};
     private static GoodsFactory ourInstance = new GoodsFactory();
+
+    /**
+     * 返回改工厂的唯一单例
+     * @return 该工厂的唯一实例
+     */
     public static GoodsFactory getInstance() {
         return ourInstance;
     }
@@ -39,6 +48,12 @@ public class GoodsFactory {
         }
     };
     private Hashtable pool = new Hashtable<GoodsEnum, Goods>();
+
+    /**
+     * 获取货物，如果货物已被创建则共享创建过的货物
+     * @param goodsEnum 表示货物类型的枚举变量
+     * @return 指定货物对象
+     */
     public Goods getGoods(GoodsEnum goodsEnum) {
         Goods goods =(Goods)pool.get(goodsEnum);
         if(goods == null) {
