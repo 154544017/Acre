@@ -89,11 +89,11 @@ public class Stock {
                 System.out.println(goods.toString() + "出库" + num + "," + "当前库存" + currentStock);
                 return true;
             }else{
-                System.out.println("库存不足！");
+                System.out.println(goods.toString() + "出库" + num +",当前库存" + stockMap.get(goods) + ",库存不足！");
                 return false;
             }
         }else{
-            System.out.println("此物品不存在！");
+            System.out.println(goods.toString() + "此物品不存在！");
             return false;
         }
     }
