@@ -25,7 +25,10 @@ public class Potato extends Plant {
     public void setId() {
         this.id = count++;
     }
-
+    /**
+     * 访问者模式中访问的方法
+     * @param plantfarmscene 要被访问的位置
+     */
     public void buryIn(PlantFarmScene plantfarmscene){
         System.out.println("一个土豆被种下去了" );
         attach(plantfarmscene.getNotification());

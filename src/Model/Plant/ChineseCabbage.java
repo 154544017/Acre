@@ -26,6 +26,10 @@ public class ChineseCabbage extends Plant {
     public void setId() {
         this.id = count++;
     }
+    /**
+     * 访问者模式中访问的方法
+     * @param plantfarmscene 要被访问的位置
+     */
     @Override
     public void buryIn(PlantFarmScene plantfarmscene){
         System.out.println("一棵大白菜被种下去了" );
