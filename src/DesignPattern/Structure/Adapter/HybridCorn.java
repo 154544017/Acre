@@ -1,13 +1,13 @@
 package DesignPattern.Structure.Adapter;
 
 import Model.Plant.Corn;
-import Model.Plant.ShowLikePotato;
+import Model.Plant.GrowLikePotato;
 import Model.Scene.PlantFarmScene;
 
 /**
  * 使用了适配器模式，Corn是适配者类，HybridCorn是适配器类，ShowLikePotato是目标抽象接口
  */
-public class HybridCorn extends Corn implements ShowLikePotato {
+public class HybridCorn extends Corn implements GrowLikePotato {
     private static String name = "HybridCorn";
     private static int count = 0;
 
@@ -19,7 +19,7 @@ public class HybridCorn extends Corn implements ShowLikePotato {
     }
 
     public String getSelf() {
-        return showLikePotato();
+        return growLikePotato();
     }
 
     /**
@@ -27,7 +27,7 @@ public class HybridCorn extends Corn implements ShowLikePotato {
      * 调用父类的getSelf(String,int)
      * @return String
      */
-    public String showLikePotato() {
+    public String growLikePotato() {
         return "杂交后长得像土豆的"+super.getSelf(name,id) + "";
     }
     public void buryIn(PlantFarmScene plantfarmscene){
