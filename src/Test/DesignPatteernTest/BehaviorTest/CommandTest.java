@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.BehaviorTest;
 
 import DesignPattern.Behavior.Command.CommandInvoker;
 import DesignPattern.Behavior.Command.StockIn;

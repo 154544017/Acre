@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.CreationTest;
 
 import DesignPattern.Structure.FlyweightFactory.GoodsFactory;
 import Main.Application;

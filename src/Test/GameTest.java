@@ -20,6 +20,9 @@ import DesignPattern.Behavior.Visitor.OptimizationVisitor;
 import DesignPattern.Behavior.Memento.FarmInfoManagement.FarmInfoTaker;
 
 
+/**
+ * 游戏整体测试类，被Main里的Application默认调用
+ */
 public class GameTest {
     private Rancher rancher;
 

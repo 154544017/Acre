@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.BehaviorTest;
 
 import DesignPattern.Behavior.Medium.ClubManagement.FarmerClub;
 import DesignPattern.Behavior.Medium.NPC;

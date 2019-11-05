@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.CreationTest;
 
 import DesignPattern.Creation.FactoryMethod.ChineseCabbageFactory;
 import DesignPattern.Creation.FactoryMethod.CornFactory;

@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.BehaviorTest;
 
 import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandIteratorAndProxy;
 import DesignPattern.Behavior.Iterator.FarmlandManagement.FarmlandSet;

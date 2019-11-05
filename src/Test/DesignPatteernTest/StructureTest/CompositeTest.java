@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.StructureTest;
 
 import DesignPattern.Structure.Composite.Stock.Stock;
 import Model.Plant.Corn;

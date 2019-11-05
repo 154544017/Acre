@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.CreationTest;
 
 import DesignPattern.Creation.AbstractFactory.AnimalFactory;
 import DesignPattern.Creation.AbstractFactory.FemaleFactory;
@@ -23,7 +23,7 @@ public class AbstractFactoryTest {
         System.out.println(MyUtils.getInfo("抽象工厂方法测试成功"));
     }
 
-    public static void addAnimal(List<Animal> animals, AnimalFactory factory){
+    private static void addAnimal(List<Animal> animals, AnimalFactory factory){
         animals.add(factory.createCattle());
         animals.add(factory.createRabbit());
         animals.add(factory.createChicken());

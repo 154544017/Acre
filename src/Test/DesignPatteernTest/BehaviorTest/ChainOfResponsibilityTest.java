@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.BehaviorTest;
 
 import Model.Farmland;
 import Util.MyUtils;

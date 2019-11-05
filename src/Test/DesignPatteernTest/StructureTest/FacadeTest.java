@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.StructureTest;
 
 import DesignPattern.Structure.Facade.Operation.OperationFacade;
 import Model.Goods.GoodsEnum;

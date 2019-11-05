@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.CreationTest;
 
 import DesignPattern.Creation.Builder.AnimalFarmSceneBuilder;
 import DesignPattern.Creation.Builder.PlantFarmSceneBuilder;

@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.BehaviorTest;
 
 import DesignPattern.Behavior.Memento.FarmInfoManagement.FarmInfoTaker;
 import Model.FarmInfo;

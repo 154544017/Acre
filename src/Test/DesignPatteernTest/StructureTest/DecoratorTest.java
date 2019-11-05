@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.StructureTest;
 
 import DesignPattern.Structure.Decorator.BoxingDecorator;
 import DesignPattern.Structure.Decorator.ProcessDecorator;

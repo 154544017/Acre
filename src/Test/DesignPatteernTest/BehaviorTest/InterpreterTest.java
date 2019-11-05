@@ -1,4 +1,4 @@
-package Test;
+package Test.DesignPatteernTest.BehaviorTest;
 
 import DesignPattern.Behavior.Interpreter.Instruction;
 import DesignPattern.Behavior.Interpreter.Interpreter;
