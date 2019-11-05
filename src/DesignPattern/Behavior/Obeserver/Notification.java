@@ -2,6 +2,10 @@ package DesignPattern.Behavior.Obeserver;
 
 import Util.MyUtils;
 
+/**
+ * A notification component inherited from observer,
+ * applying the observer pattern
+ */
 public class Notification implements Observer {
 
     /** DesignPattern.Behavior.State of the observer */
