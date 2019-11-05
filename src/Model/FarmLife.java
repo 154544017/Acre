@@ -55,6 +55,9 @@ public abstract class FarmLife implements Cloneable{
         }
     }
 
+    /**
+     * 动植物在浇水/施肥/喂养后可调用本方法，更改动植物的生长状态
+     */
     public void grow(){
         MyUtils.getModifierString(this,getSelf(),"grow");
         if(state.getClass() == Youth.class){
@@ -67,11 +70,21 @@ public abstract class FarmLife implements Cloneable{
         }
     }
 
+    /**
+     * 判断是否为空生物
+     *
+     * @return boolean, 如果是，返回 true，反之亦然
+     */
     public abstract boolean isNull();
+
+    /**
+     * 打印动植物的信息
+     */
     public void show(){
         MyUtils.getModifierString(this,getSelf(),"show:");
         System.out.println(getSelf() + state.toString());
     }
+
 
     public Object clone(){
         Object clone = null;
@@ -92,18 +105,37 @@ public abstract class FarmLife implements Cloneable{
         this.growthTime = growthTime;
     }
 
+    /**
+     * 获取自身信息
+     *
+     * @return 包含自身信息的字符串
+     */
     public abstract String getSelf();
 
+    /**
+     * 获取自身的ID
+     *
+     * @return 自身的id
+     */
     public int getId() {
         return id;
     }
 
-
+    /**
+     * 获取自身当前生长状态
+     *
+     * @return 生长状态
+     */
     public State getState() {
         return state;
     }
 
 
+    /**
+     * 设置自身的生长状态
+     *
+     * @param state 修改后的状态
+     */
     public void setState(State state) {
          this.state=state;
          this.state.react();
@@ -114,5 +146,8 @@ public abstract class FarmLife implements Cloneable{
         return growthTime;
     }
 
+    /**
+     * 设置id
+     */
     public abstract void setId();
 }

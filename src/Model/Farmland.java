@@ -67,6 +67,12 @@ public class Farmland {
         }
     }
 
+    /**
+     * 添加到库存
+     *
+     * @param stock 库存
+     * @param crop 作物
+     */
     private void addToStock(Stock stock, Plant crop) {
         if(crop.getClass() == Corn.class){
             stock.stockIn(GoodsEnum.CORN,1);
@@ -79,6 +85,9 @@ public class Farmland {
         }
     }
 
+    /**
+     * 展示信息
+     */
     public void show(){
         if(isEmpty){
             System.out.println(landId.toString() + "号农地为空地");
