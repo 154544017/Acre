@@ -4,9 +4,11 @@ import DesignPattern.Behavior.Command.CommandInvoker;
 import DesignPattern.Behavior.Command.StockIn;
 import DesignPattern.Behavior.Command.StockOut;
 import Model.Goods.GoodsEnum;
+import Util.MyUtils;
 
 public class CommandTest {
     public static void main(String[] args){
+        System.out.println(MyUtils.getInfo("命令模式测试"));
         StockIn pastureStockIn = new StockIn(GoodsEnum.PASTURE, 10);
         StockIn cornStockIn = new StockIn(GoodsEnum.CORN, 20);
         StockIn eggStockIn = new StockIn(GoodsEnum.EGG, 30);
@@ -23,5 +25,6 @@ public class CommandTest {
         commandInvoker.addCommand(cornStockOut);
         commandInvoker.addCommand(eggStockOut);
         commandInvoker.execCommand();
+        System.out.println(MyUtils.getInfo("命令模式测试成功"));
     }
 }
