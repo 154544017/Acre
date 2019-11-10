@@ -15,8 +15,5 @@ public class BridgeTest {
         System.out.println(MyUtils.getInfo("桥接模式测试成功"));
 
 
-//        Animal hen=new Hen();
-//        hen.fodder=new ExcellentFodder();
-//        System.out.println(hen.getSelf()+"吃"+hen.fodder.toString());
     }
 }
